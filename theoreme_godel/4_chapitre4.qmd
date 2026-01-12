@@ -1,0 +1,201 @@
+# La phrase qui parle d'elle-même
+
+## Le piège de l'auto-référence
+
+Au chapitre précédent, nous avons vu comment prouver qu'un système est cohérent : on construit un modèle. Mais pour l'arithmétique, cette méthode échoue — le système est trop puissant pour se contempler lui-même.
+
+Gödel va exploiter cette difficulté. Et son arme, nous l'avons annoncée : l'auto-référence. Avant de voir comment il s'en sert, arrêtons-nous sur une histoire de bibliothèque.
+
+::: {.callout-note}
+## Analogie : Le catalogue impossible
+
+
+Imaginez un bibliothécaire méticuleux qui décide de créer le catalogue ultime : un livre qui répertorie tous les livres de la bibliothèque qui ne se mentionnent pas eux-mêmes dans leur propre texte.
+
+Le projet avance bien. Des milliers de romans, de manuels, d'encyclopédies sont ajoutés — tous ces ouvrages qui, modestement, ne parlent jamais d'eux-mêmes.
+
+Puis vient la question fatale : **le catalogue doit-il se mentionner lui-même ?**
+
+- S'il se mentionne, il viole sa propre règle — il n'aurait pas dû figurer dans la liste.
+- S'il ne se mentionne pas, il respecte la règle — et devrait donc figurer dans le catalogue.
+
+Le catalogue est piégé par sa propre définition. Quelle que soit la réponse, elle se contredit elle-même.
+:::
+
+![La bibliothèque paradoxale : le catalogue qui ne peut se mentionner](images/ch4_01_bibliotheque_paradoxe.png){fig-align="center" width="450px"}
+
+---
+
+## Une lettre qui change tout
+
+En juin 1902, Bertrand Russell écrit une lettre à Gottlob Frege.
+
+Frege est alors au sommet de sa gloire. Philosophe et logicien allemand, il vient d'achever l'œuvre de sa vie : les *Grundgesetze der Arithmetik*, deux volumes monumentaux qui prétendent fonder l'ensemble des mathématiques sur la logique pure **[vH]**. Vingt ans de travail. Une cathédrale de la pensée.
+
+La lettre de Russell tient en quelques paragraphes. Elle contient une question simple, presque naïve : considérons l'ensemble de tous les ensembles qui ne se contiennent pas eux-mêmes. Cet ensemble se contient-il lui-même ?
+
+Frege comprend immédiatement. Dans sa réponse, il écrit ces mots terribles : *"L'arithmétique vacille."*
+
+---
+
+## Le paradoxe de Russell
+
+Car voici ce que Russell a découvert.
+
+Dans le système de Frege — et dans toute la théorie naïve des ensembles — on peut définir un ensemble par n'importe quelle propriété. L'ensemble des nombres pairs. L'ensemble des objets rouges. L'ensemble des idées abstraites. Tout ce qui peut être décrit peut former un ensemble.
+
+Soit. Définissons alors R comme l'ensemble de tous les ensembles qui ne se contiennent pas eux-mêmes.
+
+La plupart des ensembles ne se contiennent pas. L'ensemble des nombres pairs n'est pas lui-même un nombre pair. L'ensemble des chaises n'est pas une chaise. Ces ensembles "normaux" appartiennent à R.
+
+Mais R lui-même — se contient-il ?
+
+**Supposons que oui.** Alors R est un ensemble qui se contient lui-même. Mais R ne devait contenir que les ensembles qui *ne* se contiennent *pas*. Contradiction.
+
+**Supposons que non.** Alors R est un ensemble qui ne se contient pas lui-même. Mais c'est précisément la définition des ensembles qui appartiennent à R. Donc R devrait se contenir. Contradiction.
+
+Dans les deux cas, l'édifice s'effondre.
+
+---
+
+## La crise des fondements
+
+Le paradoxe de Russell n'était pas une curiosité de salon. C'était la bombe que nous avions évoquée au chapitre 2 — celle qui, en 1902, fit vaciller les fondations mêmes de la discipline.
+
+Imaginez qu'un architecte découvre, après des années de travail, que les fondations de son immeuble reposent sur du sable mouvant. Que les règles mêmes qu'il utilisait pour construire contenaient une faille invisible. Que tout ce qu'il croyait solide pouvait s'écrouler à tout moment.
+
+C'est exactement ce que vivaient les mathématiciens au début du XXe siècle.
+
+Car le problème n'était pas isolé. D'autres paradoxes surgissaient partout, comme des fissures dans un mur : le paradoxe du menteur ("cette phrase est fausse"), le paradoxe de Berry, le paradoxe de Richard. Tous liés, d'une façon ou d'une autre, à l'auto-référence — cette capacité vertigineuse d'une chose à parler d'elle-même.
+
+On ne pouvait plus définir un ensemble comme "n'importe quelle collection d'objets". Il fallait des règles strictes, des garde-fous, des interdictions. La théorie des ensembles devait être reconstruite de zéro.
+
+C'est ce que firent Zermelo, Fraenkel et d'autres, en créant un système axiomatique rigoureux — celui qu'on utilise encore aujourd'hui **[H1]**. Un système conçu pour éviter les paradoxes. Un système où l'auto-référence est soigneusement contrôlée.
+
+Mais on ne peut pas fuir l'auto-référence éternellement.
+
+---
+
+## Gödel retourne l'arme
+
+Trente ans après la lettre de Russell, un jeune mathématicien autrichien va faire quelque chose d'audacieux.
+
+Souvenez-vous d'Euclide, au chapitre précédent : il avait montré qu'une hypothèse fausse — "il existe un plus grand nombre premier" — conduit nécessairement à une contradiction. La contradiction, bien maîtrisée, peut imposer des vérités.
+
+Gödel va utiliser la même logique, mais avec une arme plus subtile. Là où ses prédécesseurs avaient fui l'auto-référence comme la peste, Kurt Gödel va l'embrasser. Il va construire une phrase mathématique qui parle d'elle-même — non pas pour créer un paradoxe, mais pour révéler une vérité profonde sur les limites de tout système formel.
+
+En 1931, il publie un article de trente pages au titre sobre : *"Sur les propositions formellement indécidables des Principia Mathematica et des systèmes apparentés"* **[G1]**.
+
+Son idée centrale tient en une phrase : **créer une formule qui dit "je ne suis pas démontrable"**.
+
+Appelons-la G, la phrase de Gödel.
+
+![L'ouroboros de Gödel : l'auto-référence maîtrisée](images/ch4_02_ouroboros.png){fig-align="center" width="450px"}
+
+---
+
+## Le piège se referme
+
+Analysons ce qui se passe si le système est cohérent — c'est-à-dire s'il ne prouve jamais de contradictions.
+
+**Supposons que G soit démontrable.**
+
+Alors le système prouve que "G n'est pas démontrable". Mais nous venons de dire que G *est* démontrable. Le système prouve donc quelque chose de faux. Il affirme une chose et son contraire. Il est incohérent.
+
+**Supposons que la négation de G soit démontrable.**
+
+Alors le système prouve que "G est démontrable". Cela signifie qu'il existe une preuve de G. Mais G dit qu'elle n'est pas démontrable. Le système prouve donc à la fois G et non-G. Il est incohérent.
+
+**Conclusion :**
+
+Si le système est cohérent, ni G ni sa négation ne peuvent être démontrées. G est **indécidable**.
+
+Mais attention — G n'est pas fausse. Elle dit "je ne suis pas démontrable", et c'est exactement le cas. G est **vraie**, mais **indémontrable**.
+
+---
+
+## Une vérité orpheline
+
+Réfléchissons à ce que cela signifie.
+
+Le paradoxe de Russell détruisait les systèmes qui le contenaient. Il forçait la contradiction, l'effondrement, le chaos. C'était une arme de destruction.
+
+La phrase de Gödel est différente. Elle ne détruit pas le système — elle le transcende. Elle montre qu'il existe des vérités qui flottent au-dessus du système, inaccessibles à ses preuves, mais vraies néanmoins.
+
+Des vérités orphelines — l'expression que nous avions employée au premier chapitre prend ici tout son sens. Des propositions que le système ne peut ni adopter ni rejeter. Des questions auxquelles il ne peut pas répondre — non par manque d'ingéniosité, mais par nécessité structurelle.
+
+C'est le premier théorème d'incomplétude : dans tout système formel suffisamment puissant et cohérent, il existe des vérités qui échappent à la démonstration.
+
+Le rêve de Hilbert — un système complet où toute question trouverait sa réponse — est brisé. Non pas parce que nous n'avons pas assez travaillé, mais parce que la logique elle-même l'interdit.
+
+---
+
+## Comment Gödel a-t-il fait ?
+
+L'idée de "parler de soi-même" semble paradoxale. Comment une formule mathématique peut-elle se référer à elle-même sans tomber dans le piège de Russell ?
+
+Gödel a trouvé une astuce remarquable : la **numérotation**.
+
+Il a attribué un nombre unique à chaque symbole du système. Puis à chaque formule (une suite de symboles). Puis à chaque preuve (une suite de formules). Ce codage — aujourd'hui appelé "numérotation de Gödel" **[BJ]** — permet de traduire toute affirmation *sur* les formules en une affirmation *sur* les nombres.
+
+La phrase "cette formule n'est pas démontrable" devient alors une affirmation arithmétique ordinaire, portant sur certains nombres qui, par le codage, représentent la formule elle-même.
+
+L'auto-référence passe par l'arithmétique. Le serpent se mord la queue, mais de façon parfaitement contrôlée. Pas de paradoxe — juste une vérité indémontrable.
+
+---
+
+## L'analogie du programme
+
+::: {.callout-tip}
+## Analogie : Le programme qui s'analyse
+
+
+Pour les lecteurs familiers avec l'informatique, voici une autre façon de voir les choses.
+
+Un programme informatique est une suite de caractères. Cette suite peut être stockée comme données. Un programme peut donc analyser d'autres programmes — ou même s'analyser lui-même.
+
+Gödel a fait la même chose avec les formules mathématiques. En les codant comme nombres, il a permis au système de "parler" de ses propres formules, de ses propres preuves, de ses propres limites.
+
+Et dans ce miroir, il a construit une phrase qui dit : "Aucune procédure de preuve ne me validera jamais."
+:::
+
+---
+
+## Ce que Gödel ne dit pas
+
+Il est important de dissiper quelques malentendus.
+
+**Gödel ne dit pas que les mathématiques sont fausses.** Les vérités restent vraies. C'est simplement que certaines d'entre elles ne peuvent pas être *prouvées* dans un système donné.
+
+**Gödel ne dit pas que toute question est indécidable.** L'immense majorité des théorèmes mathématiques sont parfaitement démontrables. Les phrases indécidables sont rares et très spéciales — construites précisément pour exploiter l'auto-référence.
+
+**Gödel ne dit pas qu'on ne peut rien savoir.** On peut reconnaître que G est vraie — simplement pas à l'intérieur du système. Il faut sortir, prendre du recul, utiliser un raisonnement méta-mathématique. La vérité dépasse la démonstration. C'est cette distinction cruciale entre *vérité* et *démontrabilité* qui permet à Gödel d'éviter le paradoxe du menteur — nous y reviendrons au chapitre 7.
+
+---
+
+## Ce que nous avons appris
+
+| Concept | Ce qu'il faut retenir |
+|---------|----------------------|
+| **Paradoxe de Russell** | L'auto-référence naïve mène à la contradiction — elle a forcé une refonte des fondements |
+| **La phrase de Gödel** | L'auto-référence contrôlée révèle des vérités indémontrables |
+| **Premier théorème** | Dans tout système cohérent et suffisamment puissant, il existe des vérités hors d'atteinte |
+| **Numérotation de Gödel** | Coder les formules comme nombres permet l'auto-référence sans paradoxe |
+
+---
+
+## Vers le second théorème
+
+Le premier théorème nous dit qu'il existe des vérités indémontrables.
+
+Mais Gödel ne s'est pas arrêté là. Il a remarqué quelque chose de plus profond encore.
+
+La phrase G — "je ne suis pas démontrable" — est intimement liée à la cohérence du système. Si G est vraie, c'est *parce que* le système est cohérent. Les deux sont logiquement équivalents.
+
+Or, G est indémontrable.
+
+Donc la cohérence du système est elle-même indémontrable — depuis l'intérieur du système.
+
+Un système ne peut pas certifier sa propre fiabilité. Il ne peut pas se donner un brevet de bonne conduite. Pour savoir s'il est cohérent, il faut sortir, regarder de l'extérieur — et utiliser un système plus puissant, qui lui-même...
+
+Le piège se referme. Ce second coup — plus dévastateur encore que le premier — mérite qu'on s'y attarde. Car c'est lui qui transforme une curiosité logique en crise existentielle pour les mathématiques.

@@ -1,0 +1,223 @@
+# L'art de parler de soi
+
+## Le piège du menteur
+
+Considérons une phrase en apparence anodine :
+
+> "Cette phrase est fausse."
+
+Appelons-la M. Que peut-on en dire ?
+
+Si M est vraie, alors ce qu'elle affirme est correct — donc M est fausse. Contradiction.
+
+Si M est fausse, alors ce qu'elle affirme est incorrect — donc M n'est pas fausse, donc M est vraie. Contradiction.
+
+Quelle que soit la voie choisie, on s'écrase contre un mur. M n'est ni vraie ni fausse — elle échappe à toute évaluation. C'est le **paradoxe du menteur**, connu depuis l'Antiquité, cauchemar des logiciens.
+
+![Le paradoxe du menteur : la langue nouée de la contradiction](images/ch7_01_paradoxe_menteur.png){fig-align="center" width="450px"}
+
+---
+
+## L'autoréférence n'est pas le problème
+
+On pourrait croire que le coupable est l'autoréférence — le fait qu'une phrase parle d'elle-même. Mais ce serait trop simple.
+
+Regardons ces trois phrases :
+
+| Phrase | Autoréférente ? | Problématique ? |
+|--------|-----------------|-----------------|
+| "Cette phrase contient cinq mots." | Oui | Non — elle est vraie |
+| "Cette phrase contient trois mots." | Oui | Non — elle est fausse |
+| "Cette phrase est fausse." | Oui | **Oui** — impossible à évaluer |
+
+Les deux premières phrases parlent d'elles-mêmes sans créer de paradoxe. On peut leur attribuer une valeur de vérité sans problème. La troisième, en revanche, s'effondre.
+
+Qu'est-ce qui distingue le troisième cas ?
+
+---
+
+## La boucle vicieuse
+
+Le paradoxe du menteur crée une **boucle sans ancrage**.
+
+Pour savoir si M est vraie, je dois évaluer ce que M dit. Mais M dit précisément quelque chose sur sa propre vérité. Je suis renvoyé au point de départ, indéfiniment.
+
+::: {.callout-note}
+## Analogie : La définition circulaire
+
+
+C'est comme essayer de définir un mot par lui-même : "X signifie X." La définition tourne en rond sans jamais toucher terre.
+
+Comparez avec une définition récursive qui fonctionne :
+
+`factorielle(n) = n × factorielle(n-1), avec factorielle(0) = 1`
+
+Ici, la récursion a un **point d'ancrage** — le cas de base où factorielle(0) = 1. La boucle finit par s'arrêter.
+
+Le paradoxe du menteur, lui, est une spirale infinie sans fond — il n'y a pas de cas de base, pas de terre ferme.
+:::
+
+---
+
+## Le paradoxe de Richard
+
+En 1905, le mathématicien Jules Richard découvre un paradoxe similaire, mais concernant les nombres plutôt que la vérité.
+
+Imaginons qu'on liste toutes les définitions possibles de nombres en français, dans l'ordre alphabétique. Chaque définition reçoit un numéro : définition 1, définition 2, définition 3...
+
+Maintenant, construisons une propriété étrange : un nombre est **richardien** si, quand on regarde la définition portant son numéro, cette définition ne le décrit pas.
+
+Par exemple : si la définition numéro 7 est "le plus petit nombre premier", et que 7 n'est pas le plus petit nombre premier, alors 7 est richardien.
+
+Voici le piège : la propriété "être richardien" est elle-même une définition en français. Elle a donc un numéro dans notre liste — disons 42.
+
+Le nombre 42 est-il richardien ?
+
+S'il l'est, alors par définition, la définition numéro 42 ne le décrit pas. Mais la définition numéro 42, c'est précisément "être richardien". Donc 42 n'est pas richardien. Contradiction.
+
+S'il ne l'est pas, alors la définition numéro 42 le décrit correctement. Mais cette définition dit "être richardien". Donc 42 est richardien. Contradiction.
+
+Encore une boucle vicieuse.
+
+---
+
+## Séparer les niveaux
+
+La solution à ces paradoxes est venue d'une observation simple mais profonde : on mélange deux niveaux de discours qui devraient rester séparés.
+
+| Niveau | Ce qu'on fait | Exemple |
+|--------|---------------|---------|
+| **Langage-objet** | Parler des choses | "7 est premier", "2 + 2 = 4" |
+| **Métalangage** | Parler du langage lui-même | "La formule '2+2=4' contient 5 symboles" |
+
+C'est comme la différence entre :
+
+- **Parler français** : "Le chat dort."
+- **Parler du français** : "Cette phrase contient trois mots."
+
+Le paradoxe de Richard mélange les deux : "être richardien" est censé être une propriété des nombres (langage-objet), mais sa définition fait référence à la liste des définitions (métalangage). Ce mélange crée la boucle vicieuse.
+
+La règle de sécurité est claire : ne jamais utiliser, dans une définition du premier niveau, des concepts qui appartiennent au second.
+
+![La séparation des niveaux de langage : objet et métalangage](images/ch7_02_niveaux_langage.png){fig-align="center" width="450px"}
+
+---
+
+## Le tour de force de Gödel
+
+Et pourtant, Gödel fait exactement ce qui semble interdit : il construit une phrase arithmétique qui parle d'elle-même. Comment évite-t-il le paradoxe ?
+
+Son génie réside dans le **codage**.
+
+Gödel invente une correspondance systématique — la fameuse "numérotation de Gödel" **[G1]** :
+
+- Chaque symbole du système reçoit un nombre
+- Chaque formule (suite de symboles) devient un nombre unique
+- Chaque démonstration (suite de formules) devient également un nombre
+
+Ainsi, des énoncés comme "la formule F est démontrable" se traduisent en propriétés arithmétiques ordinaires. On ne parle plus "du système de notation" — on parle de nombres qui, par le codage, *représentent* des formules.
+
+La distinction est subtile mais cruciale **[GG]** :
+
+| Richard | Gödel |
+|---------|-------|
+| Utilise directement le langage naturel et sa numérotation | Utilise un codage purement arithmétique |
+| "Être richardien" mélange explicitement les niveaux | "Être le code d'une formule indémontrable" reste une propriété de nombres |
+| Aboutit à une contradiction | Aboutit à une vérité indémontrable |
+
+---
+
+## Projeter sans trahir
+
+::: {.callout-caution}
+## Analogie : La projection cartographique
+
+
+Ce que Gödel réalise est une **projection** — comme en géométrie, où l'on représente une sphère sur une carte plane, ou comme en physique, où l'on étudie un avion à travers sa maquette en soufflerie.
+
+L'idée est de représenter une structure dans une autre, tout en préservant les relations essentielles.
+
+- **Avant Gödel** : pour prouver des choses *sur* l'arithmétique, on devait rester à l'extérieur. C'était comme étudier une langue sans jamais pouvoir utiliser un seul mot de cette langue.
+
+- **Après Gödel** : les énoncés métamathématiques deviennent des énoncés arithmétiques. On peut utiliser toute la puissance de l'arithmétique pour raisonner sur elle-même.
+
+C'est ce qui transforme la métamathématique d'un discours philosophique en une branche des mathématiques à part entière.
+:::
+
+---
+
+## Pourquoi Gödel ne tombe pas
+
+Revenons à la question centrale : pourquoi la phrase de Gödel évite-t-elle le paradoxe du menteur ?
+
+Comparons les deux :
+
+| Le menteur | Gödel |
+|------------|-------|
+| "Cette phrase est fausse." | "Cette phrase n'est pas démontrable." |
+| Boucle sur la **vérité** | Boucle sur la **démontrabilité** |
+| Crée un paradoxe | Ne crée pas de paradoxe |
+
+La différence tient en un mot : **vérité** et **démontrabilité** ne sont pas la même chose.
+
+Le menteur s'effondre parce qu'une phrase ne peut pas être à la fois vraie et fausse. C'est une contradiction logique.
+
+La phrase de Gödel, elle, peut parfaitement être vraie sans être démontrable. Ce n'est pas contradictoire — c'est simplement la preuve que le système est incomplet. La vérité dépasse la démonstration.
+
+C'est toute la leçon de l'incomplétude : Gödel a trouvé un moyen de faire parler l'arithmétique sur elle-même sans créer de paradoxe, précisément parce qu'il a ciblé la démontrabilité plutôt que la vérité.
+
+---
+
+## L'élégance de la construction
+
+Récapitulons le chemin parcouru :
+
+1. L'autoréférence naïve (le menteur, Richard) crée des paradoxes parce qu'elle mélange les niveaux de discours.
+
+2. La solution classique est de séparer strictement langage-objet et métalangage.
+
+3. Gödel trouve une troisième voie : projeter le métalangage dans le langage-objet via un codage arithmétique.
+
+4. Cette projection ne crée pas de paradoxe parce que Gödel cible la démontrabilité (une propriété du système) et non la vérité (une propriété des propositions).
+
+5. Le résultat n'est pas une contradiction mais une révélation : il existe des vérités que le système ne peut pas démontrer.
+
+C'est ce qui fait la beauté du théorème. Gödel n'a pas simplement évité un piège — il a transformé ce qui semblait être une impasse logique en un outil pour sonder les limites de tout système formel.
+
+---
+
+## Ce que nous avons appris
+
+| Concept | Ce qu'il faut retenir |
+|---------|----------------------|
+| **Paradoxe du menteur** | L'autoréférence sur la vérité crée une boucle sans issue |
+| **Paradoxe de Richard** | Mélanger langage-objet et métalangage mène à la contradiction |
+| **Séparation des niveaux** | La solution classique : ne jamais mélanger les deux discours |
+| **Projection gödelienne** | Coder le métalangage en arithmétique permet de parler de soi sans paradoxe |
+| **Vérité vs démontrabilité** | Gödel cible la démontrabilité, pas la vérité — d'où l'absence de contradiction |
+
+---
+
+## Le mot de la fin
+
+Nous voici au terme de notre exploration.
+
+De la crise de 1902 aux ondes de choc contemporaines, nous avons suivi le fil d'une idée : les systèmes formels suffisamment puissants portent en eux leurs propres limites.
+
+Euclide nous a montré que la contradiction peut imposer des vérités. Russell nous a rappelé que l'autoréférence naïve détruit. Gödel nous a révélé qu'une autoréférence bien construite peut révéler sans détruire.
+
+La cathédrale des mathématiques reste debout — non pas malgré ses limites, mais enrichie par la conscience de celles-ci. Les vérités orphelines ne sont pas des échecs. Ce sont des fenêtres ouvertes sur l'infini de ce que nous ne savons pas encore.
+
+Et c'est peut-être là que réside la plus grande leçon : dans un monde qui rêve de systèmes parfaits et d'automatisation totale, Gödel nous rappelle qu'il y aura toujours un "dehors" — un espace pour le regard humain qui transcende les règles, pour la pensée qui sort du cadre, pour la vérité qui dépasse la démonstration.
+
+---
+
+## La suite du voyage
+
+Deux chemins s'offrent maintenant à vous.
+
+**Le premier** est optionnel. Pour ceux qui veulent voir la formule de Gödel — la toucher du doigt, symbole par symbole — le chapitre 8 ouvre le capot de la machine. C'est un détour technique, mais révélateur.
+
+**Le second** mène à la question ultime. Que signifie tout cela pour les machines — et pour nous ? L'intelligence humaine peut-elle être réduite à un ensemble de règles ? Le chapitre 9 clôt le voyage en explorant ce que Gödel nous dit sur ce qu'aucune machine ne saura jamais.
+
+Vous pouvez emprunter les deux chemins, dans l'ordre — ou sauter directement à la conclusion. La cathédrale vous attend.

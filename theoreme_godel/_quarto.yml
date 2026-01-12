@@ -1,0 +1,72 @@
+project:
+  type: book
+  output-dir: _book
+
+website:
+  site-url: https://arthursrz.github.io/llm-reading-council/
+
+lang: fr
+
+book:
+  title: "L'inaccessible théorème de Gödel ?"
+  subtitle: "Une exploration accessible pour les non-logiciens"
+  author: "Arthur Sarazin"
+  date: today
+  date-format: "D MMMM YYYY"
+
+  search: true
+  page-navigation: true
+
+  chapters:
+    - index.qmd
+    - 1_chapitre1.qmd
+    - 2_chapitre2.qmd
+    - 3_chapitre3.qmd
+    - 4_chapitre4.qmd
+    - 5_chapitre5.qmd
+    - 6_chapitre6.qmd
+    - 7_chapitre7.qmd
+    - 8_chapitre8.qmd
+    - 9_chapitre9.qmd
+
+  appendices:
+    - 10_bibliographie.qmd
+
+format:
+  html:
+    theme:
+      light: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    number-depth: 2
+
+  pdf:
+    documentclass: scrreprt
+    papersize: a4
+    fontsize: 11pt
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    colorlinks: true
+    link-citations: true
+    geometry:
+      - top=30mm
+      - left=25mm
+      - right=25mm
+      - bottom=30mm
+    include-in-header:
+      text: |
+        \usepackage{fancyhdr}
+        \pagestyle{fancy}
+        \fancyhead[L]{\leftmark}
+        \fancyhead[R]{}
+        \fancyfoot[C]{\thepage}
+
+  epub:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+
+language: _language.yml

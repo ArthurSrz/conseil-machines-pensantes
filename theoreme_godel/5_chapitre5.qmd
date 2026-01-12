@@ -1,0 +1,167 @@
+# Le système qui ne peut pas se juger
+
+## Le rêve ultime de Hilbert
+
+Revenons un instant à David Hilbert et à son programme.
+
+Hilbert voulait trois choses : un système **complet** (toute question a une réponse), **cohérent** (pas de contradictions), et **décidable** (une méthode mécanique pour trancher). Gödel vient de briser le premier espoir — il existe des vérités indémontrables.
+
+Mais Hilbert aurait peut-être pu se consoler. Après tout, quelques vérités orphelines — ces propositions vraies mais indémontrables que nous avons découvertes au chapitre précédent — ne remettent pas en cause l'édifice tout entier. L'essentiel, c'est que le système soit fiable — qu'il ne produise jamais de contradictions.
+
+Or, pour être sûr que le système est fiable, il faudrait le *prouver*.
+
+C'est ici que Gödel porte le coup fatal.
+
+---
+
+## Le second théorème
+
+Rappelons-nous la phrase de Gödel, celle du chapitre précédent :
+
+> G : "Cette phrase n'est pas démontrable dans ce système."
+
+Nous avons vu que si le système est cohérent, G est vraie mais indémontrable. Les deux propriétés sont liées : G est vraie *parce que* le système est cohérent.
+
+Gödel a formalisé ce lien. Il a montré qu'on peut construire, à l'intérieur du système, une phrase qui dit exactement :
+
+> Con : "Ce système est cohérent."
+
+Et voici le coup de grâce : **Con et G sont logiquement équivalentes**.
+
+Si le système pouvait prouver Con, il prouverait G. Mais G est indémontrable. Donc Con est indémontrable.
+
+Un système suffisamment puissant ne peut pas prouver sa propre cohérence.
+
+---
+
+## L'analogie du tribunal
+
+Souvenez-vous de la question posée au chapitre 3 : comment un système peut-il certifier sa propre fiabilité ? Nous avions alors évoqué le paradoxe du menteur — celui qui jure n'avoir jamais menti. Voici une autre façon de saisir ce problème.
+
+::: {.callout-note}
+## Analogie : Le tribunal qui se juge
+
+
+Imaginons un tribunal aux règles très strictes. Chaque verdict doit être justifié par les règles. Les juges sont incorruptibles, les procédures parfaitement définies. C'est un système formel de justice.
+
+Un jour, quelqu'un pose la question : "Ce tribunal est-il fiable ? Peut-on être sûr qu'il ne condamnera jamais un innocent ?"
+
+Le président réfléchit, consulte les règles, et rend un verdict : "Oui, ce tribunal est fiable."
+
+Mais quelle valeur a ce verdict ? Si le tribunal était défaillant, ce verdict lui-même pourrait être erroné. Le tribunal affirme sa propre fiabilité — mais c'est précisément ce qu'un tribunal défaillant pourrait aussi affirmer.
+
+**L'auto-certification n'a pas de valeur probante.**
+:::
+
+![Le tribunal qui ne peut pas se juger lui-même](images/ch5_01_tribunal.png){fig-align="center" width="450px"}
+
+---
+
+## Pourquoi c'est dévastateur
+
+Hilbert espérait prouver la cohérence de l'arithmétique en utilisant des méthodes "finitistes" — des raisonnements si simples qu'ils seraient au-dessus de tout soupçon. Si ces méthodes simples pouvaient garantir que l'arithmétique ne se contredit pas, on aurait une fondation solide.
+
+Le second théorème de Gödel montre que c'est impossible.
+
+Pour prouver que l'arithmétique est cohérente, il faudrait utiliser un système *plus puissant* que l'arithmétique. Un système capable de "voir" l'arithmétique de l'extérieur, de la contempler comme un objet.
+
+::: {.callout-important}
+## Analogie : Les poupées russes infinies
+
+
+Imaginez des matriochkas — ces poupées russes qui s'emboîtent les unes dans les autres.
+
+Pour prouver que la première poupée est solide, il faudrait la placer dans une poupée plus grande qui la teste. Mais cette poupée plus grande, qui garantit *sa* solidité ? Une poupée encore plus grande.
+
+C'est une régression sans fin. Chaque système a besoin d'un système supérieur pour certifier sa cohérence. On ne peut jamais atteindre un point d'appui définitif — il y a toujours une poupée manquante au-dessus.
+:::
+
+---
+
+## L'exemple de la théorie des ensembles
+
+Prenons un exemple concret.
+
+L'arithmétique de Peano (PA) **[P1]** est le système qui formalise les nombres naturels. Peut-elle prouver sa propre cohérence ? Non, nous dit Gödel.
+
+Mais la théorie des ensembles de Zermelo-Fraenkel (ZF) est plus puissante que PA. Elle peut construire les nombres naturels comme des ensembles, et prouver que PA est cohérente.
+
+Problème résolu ? Pas du tout.
+
+Car maintenant, qui garantit que ZF est cohérente ? Si ZF contenait une contradiction cachée, toutes ses preuves seraient suspectes — y compris celle qui établit la cohérence de PA.
+
+Et ZF, par le second théorème de Gödel, ne peut pas prouver sa propre cohérence. Il faudrait un système encore plus puissant...
+
+La chaîne ne s'arrête jamais.
+
+![Les matriochkas infinies : la régression sans fin des systèmes](images/ch5_02_matriochkas.png){fig-align="center" width="450px"}
+
+---
+
+## Ce que cela signifie vraiment
+
+Le second théorème ne dit pas que les mathématiques sont incohérentes. Il dit quelque chose de plus subtil : **nous ne pouvons pas être absolument certains qu'elles sont cohérentes**.
+
+En pratique, l'arithmétique fonctionne admirablement depuis des millénaires. Aucune contradiction n'a jamais été trouvée. Les mathématiciens ont une confiance empirique — fondée sur l'usage — dans la solidité de leur discipline.
+
+::: {.callout-caution}
+## Analogie : L'ingénieur et le pont
+
+
+Cette confiance ressemble à celle qu'un ingénieur a dans un pont : il a vérifié les calculs, testé les matériaux, observé que le pont tient depuis des années.
+
+Mais il ne peut jamais *prouver* qu'il ne s'effondrera pas demain. La certitude empirique n'est pas une certitude démonstrative.
+
+De même, les mathématiciens font confiance à l'arithmétique parce qu'elle fonctionne — pas parce qu'ils ont une preuve absolue de sa cohérence.
+:::
+
+---
+
+## Le vertige de l'auto-référence
+
+Réfléchissons à ce qui rend le second théorème si profond.
+
+Pour prouver qu'un système est cohérent, il faudrait que le système puisse parler de lui-même — de ses propres preuves, de ses propres possibilités de contradiction. C'est l'auto-référence, encore et toujours.
+
+Mais l'auto-référence a un coût. Dès qu'un système devient assez puissant pour parler de lui-même, il devient assez puissant pour construire des phrases comme G — des phrases qui exploitent cette capacité pour révéler les limites du système.
+
+C'est un piège structurel. Plus un système est expressif, plus il est vulnérable à ses propres constructions auto-référentielles.
+
+---
+
+## Le lien avec Russell
+
+Souvenez-vous du paradoxe de Russell, au chapitre précédent.
+
+Russell avait montré qu'un système qui permet n'importe quelle auto-référence s'effondre dans la contradiction. Les mathématiciens avaient répondu en construisant des systèmes où l'auto-référence est soigneusement contrôlée — assez pour éviter les paradoxes.
+
+Gödel montre que ce contrôle a un prix. On peut éviter les contradictions, mais on ne peut pas *prouver* qu'on les a évitées. Le système reste à jamais dans l'incertitude sur sa propre santé.
+
+C'est comme un patient qui aurait réussi à éviter la maladie, mais qui ne pourrait jamais obtenir de certificat médical définitif.
+
+---
+
+## Ce que nous avons appris
+
+| Concept | Ce qu'il faut retenir |
+|---------|----------------------|
+| **Second théorème** | Un système suffisamment puissant ne peut pas prouver sa propre cohérence |
+| **Con ↔ G** | La cohérence est logiquement équivalente à la phrase indémontrable de Gödel |
+| **Régression infinie** | Pour prouver la cohérence de S, il faut un système plus puissant — qui a le même problème |
+| **Conséquence** | Nous ne pouvons jamais avoir une certitude absolue sur la fiabilité des mathématiques |
+
+---
+
+## Vers les conséquences
+
+Nous avons maintenant les deux théorèmes d'incomplétude sous les yeux.
+
+Le premier dit : il existe des vérités indémontrables — des vérités orphelines qui flottent au-dessus du système sans jamais pouvoir s'y ancrer.
+
+Le second dit : la cohérence elle-même est indémontrable — le système ne peut jamais certifier sa propre santé.
+
+La cathédrale des mathématiques, que nous évoquions en préface, reste debout. Mais nous savons désormais qu'elle contient des salles inaccessibles, et que nul architecte ne pourra jamais garantir, de l'intérieur, qu'elle ne s'effondrera pas.
+
+On pourrait croire que ces résultats restent confinés aux salons des logiciens, curiosités pour spécialistes sans prise sur le monde réel. Ce serait une erreur.
+
+Comme une pierre jetée dans l'eau, les théorèmes de Gödel ont généré des ondes qui se propagent encore — en informatique, où un jeune Britannique nommé Turing découvrira bientôt une limite cousine ; en philosophie, où la nature même de la vérité sera questionnée ; et jusque dans notre façon de concevoir les organisations humaines et leurs angles morts structurels.

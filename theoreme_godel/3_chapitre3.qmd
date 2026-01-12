@@ -1,0 +1,245 @@
+# Prouver qu'on ne se contredit pas
+
+## Le problème du menteur
+
+::: {.callout-important}
+## Analogie : Le serment du menteur
+
+
+Imaginez qu'on vous demande de certifier que vous n'avez jamais menti.
+
+Vous pourriez le jurer. Vous pourriez l'écrire sur l'honneur. Vous pourriez le répéter mille fois. Mais quelle valeur aurait votre témoignage ? Si vous étiez vraiment un menteur, vous mentiriez précisément sur ce point.
+
+L'auto-certification est un piège : celui qui doit prouver sa fiabilité est précisément celui dont la fiabilité est en question.
+:::
+
+Ce paradoxe, les logiciens le connaissent bien. Et il se pose avec une acuité particulière quand il s'agit de prouver qu'un système formel est **cohérent** — c'est-à-dire qu'il ne peut jamais produire de contradiction.
+
+Comment un système peut-il certifier sa propre fiabilité ? C'est la question que Hilbert voulait résoudre — et que Gödel montrera être insoluble.
+
+---
+
+## La méthode du modèle
+
+Heureusement, il existe une astuce.
+
+Plutôt que de demander au système de se juger lui-même, on construit un **modèle** : un exemple concret, un "petit monde" où toutes les règles du système sont satisfaites.
+
+Le raisonnement est simple. Si un tel monde existe — si les règles peuvent cohabiter quelque part sans se contredire — alors les règles elles-mêmes ne sont pas contradictoires. On a trouvé un témoin de leur compatibilité.
+
+::: {.callout-caution}
+## Analogie : Le plan d'architecte
+
+
+Pour prouver qu'un plan d'architecte ne contient pas d'erreurs géométriques, vous pourriez construire effectivement le bâtiment. Si le bâtiment tient debout, le plan était cohérent.
+
+C'est exactement ce que fait la méthode du modèle : construire un "bâtiment" qui satisfait toutes les règles du système. Son existence prouve qu'aucune contradiction n'était cachée dans les plans.
+:::
+
+---
+
+## Un exemple pour comprendre
+
+Prenons un système très simple — un jeu abstrait avec deux types d'objets.
+
+Appelons-les **points** (a, b, c...) et **boîtes** (L₁, L₂, L₃...). Et fixons cinq règles :
+
+| Règle | Ce qu'elle dit |
+|-------|----------------|
+| **1** | Deux points sont toujours ensemble dans au moins une boîte |
+| **2** | Un point n'appartient pas à plus de deux boîtes |
+| **3** | Aucune boîte ne contient tous les points |
+| **4** | Deux boîtes ont exactement un point en commun |
+| **5** | Une boîte ne contient pas plus de deux points |
+
+Ces règles sont-elles compatibles ? Peut-on imaginer un monde où elles sont toutes vraies en même temps ?
+
+---
+
+## Le triangle salvateur
+
+Essayons avec trois points et trois boîtes.
+
+```
+        a
+       / \
+      /   \
+     b─────c
+```
+
+Posons :
+- L₁ contient a et b
+- L₂ contient a et c
+- L₃ contient b et c
+
+Vérifions chaque règle :
+
+**Règle 1** — Chaque paire de points a sa boîte. (a,b) → L₁. (a,c) → L₂. (b,c) → L₃. ✓
+
+**Règle 2** — Chaque point est dans exactement deux boîtes, pas plus. ✓
+
+**Règle 3** — Aucune boîte ne contient les trois points. ✓
+
+**Règle 4** — Chaque paire de boîtes partage un point. L₁ et L₂ partagent a. L₁ et L₃ partagent b. L₂ et L₃ partagent c. ✓
+
+**Règle 5** — Chaque boîte contient exactement deux points. ✓
+
+Le triangle satisfait toutes les règles. Nous avons notre modèle. Le système est **cohérent**.
+
+![Le triangle salvateur : un modèle qui prouve la cohérence](images/ch3_01_triangle_modele.png){fig-align="center" width="450px"}
+
+---
+
+## Ce que le système impose
+
+Remarquez quelque chose d'intéressant : nous n'avons pas *choisi* d'avoir trois points. Le système nous l'a *imposé*.
+
+Essayez d'ajouter un quatrième point, appelons-le d.
+
+La règle 1 exige que (a,d) soit dans une boîte. Mais a est déjà dans L₁ et L₂ — deux boîtes. La règle 2 interdit qu'il soit dans une troisième.
+
+Contradiction. Un quatrième point est impossible.
+
+Essayez de n'avoir que deux points.
+
+La règle 1 exige qu'ils soient dans une boîte commune. Mais alors cette unique boîte contiendrait tous les points, ce qui viole la règle 3.
+
+Contradiction. Moins de trois points est impossible.
+
+Le système détermine lui-même ses propres limites. Trois points — exactement trois — c'est tout ce qu'il peut contenir.
+
+---
+
+## La leçon du triangle
+
+Que nous apprend cet exercice ?
+
+**Premièrement**, qu'un modèle suffit à prouver la cohérence. Nous n'avons pas besoin de vérifier toutes les déductions possibles — un seul exemple où les règles coexistent suffit.
+
+**Deuxièmement**, que les règles contraignent ce qui est possible. Ce n'est pas l'architecte qui décide de la forme du bâtiment — ce sont les contraintes géométriques.
+
+**Troisièmement**, que cette méthode est puissante mais limitée. Elle fonctionne tant qu'on peut effectivement construire le modèle.
+
+---
+
+## Quand la contradiction impose une vérité
+
+Mais la contradiction ne sert pas seulement à vérifier la cohérence. Elle peut aussi *forcer* des conclusions — imposer des vérités que personne n'avait anticipées.
+
+L'exemple le plus célèbre remonte à Euclide, trois siècles avant notre ère. Il voulait prouver qu'il existe une infinité de nombres premiers. Sa méthode ? Supposer le contraire et montrer que cette hypothèse s'effondre.
+
+---
+
+## La preuve d'Euclide
+
+Imaginons qu'il existe un plus grand nombre premier. Appelons-le x.
+
+Nous avons alors une boîte finie contenant tous les nombres premiers : 2, 3, 5, 7, 11, ..., x. C'est notre hypothèse de départ.
+
+Euclide construit maintenant un nombre particulier. Il prend tous les nombres premiers de la boîte, les multiplie entre eux, puis ajoute 1 :
+
+> y = (2 × 3 × 5 × 7 × ... × x) + 1
+
+Prenons un exemple concret. Si le plus grand nombre premier était 5, alors :
+
+> y = (2 × 3 × 5) + 1 = 30 + 1 = 31
+
+Que peut-on dire de ce nombre y ?
+
+---
+
+## Le piège se referme
+
+Essayons de diviser y par l'un des nombres premiers de la boîte.
+
+Divisons 31 par 2 : le reste est 1.
+Divisons 31 par 3 : le reste est 1.
+Divisons 31 par 5 : le reste est 1.
+
+Pourquoi ce reste de 1 à chaque fois ? Parce que y est construit comme "un multiple de tous ces nombres, plus 1". Le produit 2 × 3 × 5 = 30 est divisible par 2, par 3, et par 5. Mais 30 + 1 = 31 donne toujours un reste de 1.
+
+Donc y n'est divisible par *aucun* des nombres premiers de notre boîte.
+
+---
+
+## Les deux cas impossibles
+
+Deux possibilités se présentent alors.
+
+**Premier cas : y est lui-même premier.**
+
+Alors nous avons trouvé un nombre premier plus grand que x — puisque y est plus grand que le produit de tous les premiers, et donc certainement plus grand que x.
+
+Contradiction : x n'était pas le plus grand.
+
+**Second cas : y n'est pas premier.**
+
+Alors y est composé — il peut être décomposé en facteurs premiers. Appelons z l'un de ces facteurs.
+
+Mais z peut-il être l'un des nombres de notre boîte ? Non. Nous venons de voir qu'aucun d'eux ne divise y.
+
+Donc z est un nombre premier qui n'est pas dans la boîte. Or, la boîte était censée contenir *tous* les nombres premiers jusqu'à x. Si z n'y figure pas, c'est que z > x.
+
+Contradiction : nous avons trouvé un nombre premier plus grand que le supposé "plus grand".
+
+---
+
+## Ce qu'Euclide nous enseigne
+
+Dans les deux cas, l'hypothèse de départ — "il existe un plus grand nombre premier" — conduit à une contradiction. Donc cette hypothèse est fausse. Il n'y a pas de plus grand nombre premier : ils sont infinis.
+
+::: {.callout-warning}
+## Leçon méthodologique : La puissance de la contradiction
+
+
+Euclide n'a pas eu besoin de *construire* une infinité de nombres premiers. Il lui a suffi de montrer que l'hypothèse contraire était intenable.
+
+C'est exactement ce que fera Gödel, deux millénaires plus tard. Lui aussi partira d'une hypothèse — "le système est complet" — et montrera qu'elle mène à une impasse.
+
+La contradiction, bien maîtrisée, devient un outil pour *imposer* des vérités que le système lui-même ne peut pas démontrer directement. Ce qui semblait détruire peut aussi révéler.
+:::
+
+![L'infinité des nombres premiers, révélée par la contradiction](images/ch3_02_nombres_premiers.png){fig-align="center" width="450px"}
+
+---
+
+## Le problème de l'arithmétique
+
+Pour notre petit système à cinq règles, construire un modèle était facile. Trois points, trois segments, un dessin sur une serviette de café.
+
+Mais pour l'arithmétique ?
+
+L'arithmétique parle de nombres — d'une infinité de nombres. Son modèle serait l'ensemble des entiers naturels lui-même, avec toutes leurs propriétés. Comment construire l'infini ?
+
+On peut essayer de le décrire, bien sûr. Mais cette description serait elle-même un système formel. Et ce système aurait besoin de sa propre preuve de cohérence. On entrerait dans une régression sans fin — un problème que nous retrouverons, sous une forme encore plus aiguë, avec le second théorème de Gödel.
+
+C'est le piège dans lequel Hilbert s'est trouvé. Il voulait prouver la cohérence de l'arithmétique *depuis l'intérieur* — en utilisant seulement les ressources de l'arithmétique elle-même. Une auto-certification, en quelque sorte.
+
+Gödel va montrer que c'est impossible.
+
+---
+
+## Ce que nous avons appris
+
+| Concept | Ce qu'il faut retenir |
+|---------|----------------------|
+| **Cohérence** | Un système est cohérent s'il ne peut pas prouver une contradiction |
+| **Modèle** | Un "monde" où toutes les règles sont vraies — le triangle en est un exemple |
+| **Preuve par modèle** | Si un modèle existe, le système est cohérent |
+| **Preuve par contradiction** | Supposer le contraire et montrer que cela mène à l'absurde — la méthode d'Euclide |
+| **Contradiction qui impose** | La contradiction peut *forcer* des conclusions, pas seulement éviter des erreurs |
+| **Limite** | Pour les systèmes infinis, construire un modèle devient problématique |
+
+---
+
+## Vers l'incomplétude
+
+Nous avons vu comment prouver qu'un petit système est cohérent : on construit un modèle qui satisfait toutes ses règles. Et nous avons vu, avec Euclide, comment la contradiction elle-même peut imposer des vérités.
+
+Mais ces deux armes — le modèle et la contradiction — se heurtent à un mur quand le système devient trop puissant. L'arithmétique ne peut pas construire son propre modèle. Elle ne peut pas sortir d'elle-même pour se contempler de l'extérieur.
+
+C'est dans cette impasse que l'auto-référence va réapparaître. Non plus comme une curiosité philosophique, mais comme une arme à double tranchant.
+
+D'abord, elle va presque tout détruire. Puis, dans les mains d'un jeune Autrichien, elle va révéler des vérités que personne n'avait imaginées.
+
+Cette histoire commence par un bibliothécaire méticuleux — et une lettre de trois paragraphes qui fit vaciller les fondements des mathématiques.

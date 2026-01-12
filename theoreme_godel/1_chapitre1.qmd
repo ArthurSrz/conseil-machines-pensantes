@@ -1,0 +1,94 @@
+# Le langage des nombres
+
+## Les mathématiques de tous les jours
+
+Avant de parler de Gödel, il faut parler de ce qu'il a brisé.
+
+L'arithmétique, c'est d'abord une histoire familière. Deux pommes plus trois pommes font cinq pommes. Sept est plus grand que quatre. Si vous avez douze euros et que vous en dépensez huit, il vous en reste quatre. Ces vérités semblent si évidentes qu'on pourrait les croire inscrites dans la nature même des choses.
+
+Et pourtant, ces évidences reposent sur un édifice invisible — une cathédrale de règles que nous appliquons sans y penser. L'addition est commutative (3 + 5 = 5 + 3). La multiplication se distribue sur l'addition (2 × (3 + 4) = 2 × 3 + 2 × 4). Zéro, ajouté à n'importe quel nombre, le laisse inchangé.
+
+Ces règles, les mathématiciens les appellent des **axiomes**.
+
+---
+
+## La méthode axiomatique
+
+Un axiome, c'est une vérité qu'on accepte sans la démontrer — un point de départ.
+
+L'idée est séduisante par sa simplicité : si l'on choisit bien ses axiomes, on peut en déduire tout le reste. Chaque théorème devient une conséquence logique des axiomes. Chaque preuve devient une chaîne de déductions, vérifiable mécaniquement, où chaque maillon découle du précédent.
+
+::: {.callout-note}
+## Analogie : Le jeu de LEGO
+
+
+Imaginez un jeu de LEGO. Les axiomes sont vos briques de base — les petits blocs élémentaires. Les règles de logique sont les instructions de montage. À partir de ces briques, vous construisez des structures de plus en plus élaborées : des maisons, des châteaux, des villes entières.
+
+Mais voici le piège : peu importe le nombre de briques que vous ajoutez, certaines formes resteront impossibles à assembler — non par manque de pièces, mais parce que les règles d'emboîtement l'interdisent.
+:::
+
+C'est exactement ce qu'a fait Giuseppe Peano à la fin du XIXe siècle **[P1]**. En cinq axiomes seulement, il a capturé l'essence de l'arithmétique des nombres naturels. Cinq phrases, et tout le reste en découle — l'addition, la multiplication, les nombres premiers, les équations.
+
+Du moins, c'est ce qu'on croyait.
+
+![Les axiomes comme briques de LEGO, fondations de l'édifice mathématique](images/ch1_01_lego_axiomes.png){fig-align="center" width="450px"}
+
+---
+
+## L'ombre au tableau
+
+Car voici le problème que Gödel va révéler : ce jeu de LEGO a une faille.
+
+Peu importe le nombre de briques que vous ajoutez, peu importe l'ingéniosité de vos constructions, il existera toujours des formes que vous ne pourrez pas assembler. Non pas parce que vous manquez de briques, mais parce que certaines formes sont *structurellement* hors d'atteinte.
+
+Transposé à l'arithmétique, cela donne ceci : il existe des affirmations sur les nombres qui sont **vraies**, mais qu'aucune chaîne de déductions ne pourra jamais prouver à partir des axiomes. Des vérités orphelines, en quelque sorte, qui flottent au-dessus du système sans jamais pouvoir s'y ancrer.
+
+C'est contre-intuitif. Si quelque chose est vrai, ne devrait-on pas pouvoir le démontrer ?
+
+Cette intuition — que vérité et démontrabilité coïncident — était au cœur du projet mathématique depuis les Grecs. Pendant deux millénaires, personne n'a sérieusement douté qu'avec assez de travail, toute question mathématique finirait par trouver sa réponse.
+
+C'est précisément cette certitude que Gödel va fracasser — en deux coups successifs qui résonneront jusqu'à nos jours.
+
+![Les vérités orphelines, flottant au-dessus du système sans jamais s'y ancrer](images/ch1_02_verites_orphelines.png){fig-align="center" width="450px"}
+
+---
+
+## Une analogie pour comprendre
+
+::: {.callout-warning}
+## Analogie : Le règlement intérieur
+
+
+Pensez au règlement intérieur d'une grande organisation — une université, une entreprise, une administration.
+
+Ce règlement tente de prévoir toutes les situations possibles : qui a le droit de faire quoi, dans quelles circonstances, selon quelles procédures. Les rédacteurs ont travaillé dur pour couvrir tous les cas de figure.
+
+Et pourtant, vous savez d'expérience que des situations surviennent toujours où le règlement ne dit rien. Des zones grises où la réponse "correcte" existe intuitivement, mais où aucun article ne s'applique.
+
+On pourrait croire qu'il suffit d'ajouter des articles pour combler ces lacunes. Mais Gödel montre que pour tout système de règles suffisamment riche, ces zones grises sont **inévitables**. Ce n'est pas un défaut de rédaction — c'est une propriété mathématique fondamentale.
+:::
+
+---
+
+## Ce que nous avons appris
+
+Résumons avant de poursuivre.
+
+| Concept | Ce qu'il faut retenir |
+|---------|----------------------|
+| **L'arithmétique** | Les règles familières sur les nombres — addition, multiplication, comparaison |
+| **Les axiomes** | Les vérités de départ qu'on accepte sans preuve |
+| **La méthode axiomatique** | Déduire tout le reste à partir des axiomes, par pure logique |
+| **Le problème** | Certaines vérités échappent à toute déduction — elles sont vraies, mais indémontrables |
+
+---
+
+## Vers le rêve formaliste
+
+Nous venons de poser les fondations. L'arithmétique peut être capturée par des axiomes, et de ces axiomes on peut déduire des théorèmes.
+
+Mais cette idée — réduire les mathématiques à un jeu de symboles et de règles — a fasciné les plus grands esprits du début du XXe siècle. Deux d'entre eux ont porté ce rêve plus loin que quiconque : David Hilbert et Bertrand Russell.
+
+Leur ambition ? Rien de moins que la perfection mathématique. Un système complet, où toute question trouverait sa réponse. Un système cohérent, où aucune contradiction ne serait possible. Un système dont on pourrait *prouver* qu'il est fiable.
+
+Ce rêve grandiose allait mobiliser les plus grands esprits d'une génération. Mais il portait en lui le germe de sa propre destruction. Pour le comprendre, il faut rencontrer les deux hommes qui l'ont porté plus loin que quiconque : un monarque des mathématiques régnant sur Göttingen, et un philosophe britannique traumatisé par une lettre de trois paragraphes.

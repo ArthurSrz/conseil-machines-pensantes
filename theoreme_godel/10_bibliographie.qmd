@@ -1,0 +1,138 @@
+# Bibliographie
+
+Cette bibliographie rassemble les sources primaires historiques et les travaux de référence sur les théorèmes d'incomplétude de Gödel, les fondements des mathématiques, et leurs implications philosophiques et informatiques.
+
+---
+
+## Sources primaires historiques
+
+### L'article fondateur de Gödel
+
+**[G1]** Gödel, K. (1931). *Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I* [Sur les propositions formellement indécidables des Principia Mathematica et des systèmes apparentés]. *Monatshefte für Mathematik und Physik*, 38, 173-198.
+
+> L'article original de trente pages qui a bouleversé les fondements des mathématiques. Gödel y démontre ses deux théorèmes d'incomplétude.
+
+### Les Principia Mathematica
+
+**[PM]** Whitehead, A. N., & Russell, B. (1910-1913). *Principia Mathematica* (3 volumes). Cambridge University Press.
+
+> L'œuvre monumentale qui tentait de fonder l'ensemble des mathématiques sur la logique pure. C'est le système que Gödel a pris pour cible.
+
+### Les travaux de Turing
+
+**[T1]** Turing, A. M. (1936). On computable numbers, with an application to the Entscheidungsproblem. *Proceedings of the London Mathematical Society*, 2(42), 230-265.
+
+> L'article fondateur de l'informatique théorique, où Turing introduit sa machine universelle et démontre l'indécidabilité du problème de l'arrêt.
+
+### Les axiomes de Peano
+
+**[P1]** Peano, G. (1889). *Arithmetices principia, nova methodo exposita*. Turin: Fratres Bocca.
+
+> La formulation originale des cinq axiomes de l'arithmétique des nombres naturels.
+
+---
+
+## Recueils et anthologies
+
+**[vH]** van Heijenoort, J. (1967). *From Frege to Gödel: A Source Book in Mathematical Logic, 1879-1931*. Harvard University Press. (742 citations)
+
+> Anthologie indispensable contenant les textes fondateurs de la logique mathématique moderne, incluant la traduction anglaise de l'article de Gödel.
+
+**[GG]** Grattan-Guinness, I. (2000). *The Search for Mathematical Roots, 1870-1940: Logics, Set Theories and the Foundations of Mathematics from Cantor through Russell to Gödel*. Princeton University Press. DOI: [10.1515/9781400824045](https://doi.org/10.1515/9781400824045) (188 citations)
+
+> Histoire complète du contexte mathématique, du contenu et de l'impact de la logique que Russell a développée avec Whitehead dans les Principia Mathematica.
+
+---
+
+## Manuels et introductions
+
+**[BJ]** Boolos, G., Burgess, J. P., & Jeffrey, R. C. (2007). *Computability and Logic* (5e éd.). Cambridge University Press. DOI: [10.1017/cbo9780511804076](https://doi.org/10.1017/cbo9780511804076) (280 citations)
+
+> Manuel de référence couvrant la théorie de la calculabilité, les théorèmes de Gödel, et leurs implications.
+
+**[B1]** Boolos, G. (1994). *The Logic of Provability*. Cambridge University Press. DOI: [10.1017/cbo9780511625183](https://doi.org/10.1017/cbo9780511625183) (379 citations)
+
+> Étude approfondie des logiques de la démontrabilité, directement liées au second théorème de Gödel.
+
+**[TS]** Troelstra, A. S., & Schwichtenberg, H. (1996). *Basic Proof Theory*. Cambridge University Press. (690 citations)
+
+> Introduction à la théorie de la démonstration, branche des mathématiques née des travaux de Hilbert et Gödel.
+
+**[H1]** Halmos, P. R. (1960). *Naive Set Theory*. Van Nostrand. (603 citations)
+
+> Introduction classique à la théorie des ensembles, incluant un traitement des axiomes de Peano.
+
+---
+
+## Théorie de la calculabilité
+
+**[S1]** Soare, R. I. (1978). Recursively enumerable sets and degrees. *Bulletin of the American Mathematical Society*, 84(6), 1149-1181. DOI: [10.1090/s0002-9904-1978-14552-2](https://doi.org/10.1090/s0002-9904-1978-14552-2) (1 564 citations)
+
+> Article de référence sur les ensembles récursivement énumérables, fondamentaux pour la compréhension des limites de la calculabilité.
+
+**[Po]** Post, E. L. (1944). Recursively enumerable sets of positive integers and their decision problems. *Bulletin of the American Mathematical Society*, 50(5), 284-316. DOI: [10.1090/s0002-9904-1944-08111-1](https://doi.org/10.1090/s0002-9904-1944-08111-1) (884 citations)
+
+> Travail pionnier sur les problèmes de décision, établissant des liens entre la logique et le calcul.
+
+**[BSS]** Blum, L., Shub, M., & Smale, S. (1989). On a theory of computation and complexity over the real numbers. *Bulletin of the American Mathematical Society*, 21(1), 1-46. DOI: [10.1090/s0273-0979-1989-15750-9](https://doi.org/10.1090/s0273-0979-1989-15750-9) (1 053 citations)
+
+> Extension de la théorie de Turing aux nombres réels, avec discussions sur les machines universelles.
+
+**[DP]** Davis, M., & Putnam, H. (1960). A computing procedure for quantification theory. *Journal of the ACM*, 7(3), 201-215. DOI: [10.1145/321033.321034](https://doi.org/10.1145/321033.321034) (2 577 citations)
+
+> Procédure de décision pour la logique du premier ordre, ancêtre des solveurs SAT modernes.
+
+---
+
+## Philosophie et implications
+
+**[L1]** Lucas, J. R. (1961). Minds, machines and Gödel. *Philosophy*, 36(137), 112-127. DOI: [10.1017/s0031819100057983](https://doi.org/10.1017/s0031819100057983) (567 citations)
+
+> Article célèbre argumentant que les théorèmes de Gödel montrent que l'esprit humain ne peut être réduit à une machine.
+
+**[W1]** Wittgenstein, L. (1921). *Tractatus Logico-Philosophicus*. (3 275 citations)
+
+> Œuvre philosophique majeure, contemporaine des débats sur les fondements des mathématiques.
+
+**[R1]** Russell, B. (1959). *My Philosophical Development*. Routledge. DOI: [10.4324/9781003308942](https://doi.org/10.4324/9781003308942) (443 citations)
+
+> Autobiographie intellectuelle de Russell, incluant ses réflexions sur les paradoxes et les Principia Mathematica.
+
+**[dC]** da Costa, N. C. A. (1974). On the theory of inconsistent formal systems. *Notre Dame Journal of Formal Logic*, 15(4), 497-510. DOI: [10.1305/ndjfl/1093891487](https://doi.org/10.1305/ndjfl/1093891487) (727 citations)
+
+> Fondation des logiques paraconsistantes, qui tolèrent certaines contradictions sans s'effondrer.
+
+---
+
+## Intelligence artificielle et limites du calcul
+
+**[Go]** Goertzel, B. (2014). Artificial General Intelligence: Concept, State of the Art, and Future Prospects. *Journal of Artificial General Intelligence*, 5(1), 1-46. DOI: [10.2478/jagi-2014-0001](https://doi.org/10.2478/jagi-2014-0001) (468 citations)
+
+> Panorama de l'intelligence artificielle générale et des défis théoriques, incluant les limites gödeliennes.
+
+**[Ba]** Backus, J. (1978). Can programming be liberated from the von Neumann style? A functional style and its algebra of programs. *Communications of the ACM*, 21(8), 613-641. DOI: [10.1145/359576.359579](https://doi.org/10.1145/359576.359579) (2 543 citations)
+
+> Réflexion fondamentale sur les paradigmes de programmation et leurs limites.
+
+---
+
+## Complétude et décidabilité
+
+**[Ch]** Chang, C. C. (1959). A new proof of the completeness of the Łukasiewicz axioms. *Transactions of the American Mathematical Society*, 93(1), 74-80. DOI: [10.1090/s0002-9947-1959-0122718-1](https://doi.org/10.1090/s0002-9947-1959-0122718-1) (399 citations)
+
+> Nouvelle preuve de la complétude d'un système logique, illustrant les méthodes de preuve en métalogique.
+
+---
+
+## Notes sur les sources
+
+Les références marquées d'un DOI peuvent être consultées en ligne. Les citations (indiquées entre parenthèses) proviennent de la base de données OpenAlex et reflètent l'impact académique de chaque ouvrage.
+
+Pour une introduction accessible aux théorèmes de Gödel, nous recommandons particulièrement :
+- **[BJ]** Boolos, Burgess & Jeffrey pour une approche mathématique rigoureuse
+- **[vH]** van Heijenoort pour les textes historiques originaux
+- **[L1]** Lucas pour les implications philosophiques
+
+---
+
+*Bibliographie compilée à partir de recherches sur OpenAlex (janvier 2026)*

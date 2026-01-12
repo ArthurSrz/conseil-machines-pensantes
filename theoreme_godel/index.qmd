@@ -1,0 +1,135 @@
+# Préface {.unnumbered}
+
+## Une fissure dans l'édifice
+
+Au tournant du XXe siècle, les mathématiques traversent une crise existentielle.
+
+En 1902, Bertrand Russell découvre un paradoxe qui fait vaciller les fondations mêmes de la discipline. Les mathématiciens réalisent, horrifiés, que leurs définitions les plus élémentaires contiennent des contradictions cachées. Pendant trois décennies, les plus grands esprits de l'époque — Hilbert, Russell, Whitehead, Zermelo — s'acharnent à reconstruire l'édifice sur des bases solides.
+
+Puis, en 1931, un jeune mathématicien autrichien de vingt-cinq ans publie un article de trente pages qui va tout changer **[G1]**. Kurt Gödel ne répare pas la fissure — il démontre qu'elle est irréparable. Les mathématiques, cette cathédrale de certitudes que l'humanité construit depuis l'Antiquité, contiennent en leur cœur une limite fondamentale.
+
+::: {.callout-tip}
+## L'essentiel à retenir
+
+Ce n'est pas une erreur de calcul. Ce n'est pas un paradoxe qu'on pourrait résoudre avec plus d'ingéniosité. C'est une propriété structurelle, aussi incontournable que la vitesse de la lumière en physique.
+
+**Le message de Gödel** : les mathématiques, cette cathédrale de certitudes que l'humanité construit depuis l'Antiquité, contiennent en leur cœur une limite fondamentale — et cette limite est irréparable.
+:::
+
+Ce livre raconte cette crise, cette découverte, et leurs implications.
+
+![La cathédrale des mathématiques, fissurée en son cœur](images/preface_01_cathedrale.png){fig-align="center" width="450px"}
+
+---
+
+## À qui s'adresse ce livre ?
+
+Vous n'avez pas besoin d'être mathématicien pour comprendre Gödel. Si vous savez ce qu'est une addition et si vous avez déjà joué à un jeu avec des règles, vous avez tout le bagage nécessaire.
+
+Ce livre est écrit pour :
+
+- Le curieux qui a entendu parler de "l'incomplétude" sans jamais vraiment comprendre de quoi il s'agissait
+- Le gestionnaire ou le juriste qui pressent que tout système de règles a ses angles morts
+- L'informaticien qui veut comprendre pourquoi certains problèmes sont "indécidables"
+- Le philosophe amateur qui s'interroge sur les limites de la raison
+- Quiconque aime les idées qui changent notre façon de voir le monde
+
+---
+
+## Ce que vous allez découvrir
+
+Imaginez qu'on vous demande de rédiger le règlement parfait d'une organisation. Un règlement si complet qu'il prévoirait toutes les situations possibles, répondrait à toutes les questions, et ne se contredirait jamais.
+
+Gödel a prouvé que c'est impossible.
+
+Non pas parce que vous manquez de talent ou de temps, mais parce que la logique elle-même l'interdit.
+
+::: {.callout-warning}
+## Les deux coups de Gödel
+
+Tout système de règles suffisamment riche pour exprimer l'arithmétique de base — les simples opérations sur les nombres entiers — contiendra nécessairement :
+
+1. **Premier théorème (Incomplétude)** : Des affirmations vraies qu'il ne pourra jamais prouver — des *vérités orphelines* qui flottent au-dessus du système
+
+2. **Second théorème (Auto-certification impossible)** : Une incapacité à garantir sa propre cohérence — l'impossibilité de s'auto-certifier
+
+Ce sont les deux coups portés par Gödel. C'est vertigineux. Et c'est vrai.
+:::
+
+---
+
+## Le plan de ce livre
+
+Nous progresserons par étapes, sans jamais présupposer de connaissances techniques.
+
+**Le chapitre 1** pose les bases : qu'est-ce que l'arithmétique, qu'est-ce qu'un axiome, qu'est-ce qu'une preuve ? Ces notions, bien comprises, suffisent à saisir l'essentiel.
+
+**Le chapitre 2** présente le rêve formaliste : comment Hilbert et Russell ont voulu transformer les mathématiques en un jeu de symboles parfaitement rigoureux — et pourquoi ce rêve était voué à l'échec.
+
+**Le chapitre 3** explique la consistance : comment prouver qu'un système de règles ne se contredit pas ? À travers un exemple concret, nous verrons la méthode des modèles — et ses limites.
+
+**Le chapitre 4** expose le premier théorème d'incomplétude : comment Gödel construit une phrase qui parle d'elle-même, et pourquoi cette phrase échappe à toute démonstration.
+
+**Le chapitre 5** aborde le second théorème : pourquoi un système ne peut jamais certifier sa propre fiabilité. C'est comme demander à un suspect de garantir son innocence — quelle que soit sa sincérité, sa parole ne suffit pas.
+
+**Le chapitre 6** explore les conséquences : en informatique, en philosophie, dans notre compréhension des systèmes complexes.
+
+**Le chapitre 7** révèle l'art de parler de soi sans se contredire : pourquoi le paradoxe du menteur détruit, tandis que la phrase de Gödel révèle. La clé ? La différence subtile entre vérité et démontrabilité.
+
+**Le chapitre 8** est optionnel. Pour les plus curieux, il décortique la formule originale de Gödel — symbole par symbole — et révèle le mécanisme exact de l'auto-référence.
+
+**Le chapitre 9** clôt le voyage en posant la question ultime : que signifie l'incomplétude pour les machines — et pour nous ? Pourquoi l'intelligence humaine ne peut pas être réduite à un manuel de règles, et quels nouveaux horizons cette limite ouvre-t-elle ?
+
+---
+
+## Un mot sur la rigueur
+
+Ce livre fait un choix assumé : la clarté plutôt que l'exhaustivité.
+
+Les démonstrations originales de Gödel sont d'une ingéniosité redoutable. Elles impliquent un codage des formules mathématiques en nombres, une construction récursive délicate, et des subtilités techniques que seuls les spécialistes maîtrisent pleinement.
+
+Nous n'irons pas jusque-là.
+
+Notre objectif est de transmettre l'intuition — cette compréhension profonde qui permet de saisir *pourquoi* le résultat est vrai, même sans suivre chaque étape de la preuve. Le lecteur qui souhaite aller plus loin trouvera en fin d'ouvrage des références vers des textes plus techniques.
+
+---
+
+## Pourquoi Gödel compte
+
+On pourrait croire que l'incomplétude est une curiosité de logicien, sans prise sur le monde réel. Ce serait une erreur.
+
+::: {.callout-caution}
+## Trois leçons pour notre monde
+
+Les théorèmes de Gödel nous rappellent que :
+
+- **La raison a des limites** — non pas par faiblesse, mais par structure
+- **Aucun système ne peut se valider lui-même** — il faut toujours un regard extérieur
+- **La vérité dépasse la démonstration** — certaines choses sont vraies sans qu'on puisse le prouver
+
+Dans un monde obsédé par les algorithmes, les procédures et les systèmes automatisés, ce message n'a jamais été aussi pertinent.
+:::
+
+---
+
+## Une invitation
+
+Gödel n'a pas détruit les mathématiques. Il les a rendues plus humbles, et peut-être plus belles.
+
+Avant lui, on rêvait d'une cathédrale achevée, où toute question trouverait sa réponse. Après lui, on sait que cette cathédrale est vivante — elle s'étend sans cesse vers des territoires inexplorés, consciente de ses propres limites.
+
+Ce livre est une invitation à contempler cet horizon sans fin.
+
+![Kurt Gödel, le jeune mathématicien qui changea tout](images/preface_02_godel.png){fig-align="center" width="450px"}
+
+---
+
+Mais avant de découvrir ce que Gödel a brisé, il faut d'abord comprendre ce qu'il y avait à briser. Commençons par le commencement : les nombres, ces compagnons silencieux de nos vies, et le langage que les mathématiciens ont inventé pour en parler.
+
+---
+
+::: {.callout-note}
+## Note sur les références
+
+Les citations entre crochets **[G1]**, **[PM]**, etc., renvoient à la [bibliographie](10_bibliographie.qmd) en fin d'ouvrage, qui recense les sources primaires historiques et les travaux de référence.
+:::

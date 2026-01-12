@@ -1,0 +1,122 @@
+# Le rêve de la machine parfaite
+
+## L'homme qui voulait tout prouver
+
+David Hilbert était, au tournant du XXe siècle, le mathématicien le plus influent au monde.
+
+Grand, charismatique, il régnait sur Göttingen comme un monarque éclairé sur son royaume. Les meilleurs esprits de la planète venaient y étudier. Ce qu'Hilbert pensait aujourd'hui, la communauté mathématique le penserait demain.
+
+Et Hilbert avait un rêve.
+
+Il voulait transformer les mathématiques en une machine. Une machine parfaite, où chaque question aurait une réponse, où chaque réponse serait vérifiable, où aucune contradiction ne pourrait jamais se glisser. Un système clos, complet, définitif.
+
+Ce rêve avait un nom : le **programme de Hilbert**.
+
+![La machine parfaite de Hilbert, rêve d'un système mathématique complet](images/ch2_01_machine_parfaite.png){fig-align="center" width="450px"}
+
+---
+
+## Oublier le sens des mots
+
+Pour comprendre ce programme, il faut d'abord saisir une idée étrange : en mathématiques pures, les mots ne veulent rien dire.
+
+Quand un axiome parle d'un "point", peu importe ce que vous imaginez — un grain de sable, un pixel, une étoile dans le ciel. Quand il parle d'un "nombre", peu importe que vous pensiez à des pommes, des euros ou des abstractions pures. Seules comptent les **relations** que les axiomes définissent entre ces termes.
+
+::: {.callout-tip}
+## Citation célèbre : Hilbert
+
+
+« On doit pouvoir remplacer les mots "points, droites, plans" par "tables, chaises, chopes de bière". Si les axiomes restent vrais, les théorèmes le resteront aussi. »
+
+Cette provocation calculée résume l'essence du formalisme : les objets mathématiques ne sont que des noms interchangeables. Seules les relations entre eux importent.
+:::
+
+C'est radical. C'est contre-intuitif. Et c'est exactement ce qui rend le formalisme si puissant.
+
+---
+
+## Le jeu de cartes
+
+::: {.callout-note}
+## Analogie : Le jeu de cartes
+
+
+Imaginez un jeu de cartes dont vous ne connaissez pas les règles. Vous observez des joueurs manipuler des symboles — ♠, ♥, ♦, ♣ — selon des patterns qui vous échappent. Puis quelqu'un vous tend le règlement.
+
+Ce règlement ne dit pas ce que "pique" signifie. Il ne dit pas pourquoi ♥ s'appelle "cœur" ou quel est le lien entre ♦ et les diamants. Il dit simplement : *"Si un joueur possède deux ♠, il gagne."*
+
+Et c'est suffisant. Avec ce règlement, vous pouvez jouer, gagner, perdre, sans jamais vous soucier de la "signification profonde" des symboles.
+
+Les mathématiques formalistes fonctionnent de la même façon : un jeu de symboles et de règles, où le sens est entièrement contenu dans les règles elles-mêmes. Ce qui compte n'est pas ce que les symboles "représentent", mais comment ils s'articulent entre eux.
+:::
+
+![Les mathématiques comme jeu de cartes : seules comptent les règles](images/ch2_02_jeu_cartes.png){fig-align="center" width="450px"}
+
+---
+
+## Russell et le traumatisme de 1902
+
+Bertrand Russell, philosophe britannique, a lui aussi embrassé le formalisme. Mais pas avant d'avoir vécu un traumatisme intellectuel.
+
+En 1902, Russell découvre un paradoxe dévastateur au cœur de la théorie des ensembles — le fondement même des mathématiques de l'époque. Une faille logique si grave qu'elle menace de tout faire s'effondrer. Nous y reviendrons en détail plus tard ; pour l'instant, retenons simplement que les mathématiciens ont soudain réalisé que leurs fondations reposaient sur du sable mouvant.
+
+La réponse de Russell ? Reconstruire. Avec Alfred North Whitehead, il entreprend un projet titanesque : les *Principia Mathematica* **[PM]**, trois volumes massifs qui tentent de refonder l'ensemble des mathématiques sur des bases parfaitement rigoureuses. Pas d'intuition, pas de "sens commun", pas d'appel à l'évidence — rien que des symboles et des règles de manipulation, soigneusement conçus pour éviter les paradoxes.
+
+Russell a résumé cette vision en une formule devenue célèbre :
+
+> « Les mathématiques pures sont cette discipline où l'on ne sait pas de quoi l'on parle, ni si ce qu'on dit est vrai. »
+
+La phrase semble paradoxale, presque nihiliste. Elle est en réalité libératrice. Car si les mathématiques ne parlent de rien en particulier, elles peuvent parler de tout. Leur vérité ne dépend pas du monde extérieur — elle est auto-suffisante, contenue tout entière dans la cohérence interne du système.
+
+Mais cette cohérence, précisément — comment la garantir ?
+
+---
+
+## Le programme en trois points
+
+Résumons ce que Hilbert et Russell espéraient accomplir.
+
+**Premièrement**, la **complétude**. Pour toute affirmation formulée dans le système, on doit pouvoir prouver soit qu'elle est vraie, soit qu'elle est fausse. Pas de questions sans réponses.
+
+**Deuxièmement**, la **cohérence**. Le système ne doit jamais permettre de prouver une chose et son contraire. Pas de contradictions.
+
+**Troisièmement**, la **décidabilité**. Il doit exister une méthode mécanique — un algorithme, dirait-on aujourd'hui — pour déterminer si une affirmation est vraie ou fausse. Pas d'impasses.
+
+Si ces trois propriétés étaient réunies, les mathématiques deviendraient une science parfaite. Une machine à produire des vérités, infaillible et automatique.
+
+---
+
+## Le sommet avant la chute
+
+En 1928, au Congrès international des mathématiciens de Bologne, Hilbert proclame avec assurance :
+
+> « Il n'y a pas de problème insoluble. »
+
+C'était son credo, sa foi dans la puissance de la raison humaine. Les mathématiques, pensait-il, finiraient par être entièrement cartographiées. Chaque territoire serait exploré, chaque question résolue.
+
+Trois ans plus tard, un jeune Autrichien timide et maladif allait prouver qu'il avait tort — en deux coups successifs qui allaient redéfinir les limites de la raison mathématique.
+
+---
+
+## Ce que nous avons appris
+
+| Concept | Ce qu'il faut retenir |
+|---------|----------------------|
+| **Le formalisme** | Les mathématiques comme jeu de symboles, où seules comptent les règles |
+| **Hilbert** | Le rêve d'un système complet, cohérent et décidable |
+| **Russell** | On peut prouver des vérités sans savoir à quoi elles réfèrent |
+| **Le programme** | Réduire les mathématiques à une machine parfaite |
+
+---
+
+## La question de la cohérence
+
+Hilbert voulait un système sans contradictions. Mais comment *prouver* qu'un système est cohérent ?
+
+C'est plus difficile qu'il n'y paraît. Après tout, si le système contenait une contradiction cachée, toutes ses preuves seraient suspectes — y compris celle qui prétendrait établir sa cohérence.
+
+Il existe pourtant une méthode. Elle consiste à construire un **modèle** : un exemple concret où toutes les règles sont satisfaites. Si un tel modèle existe, le système ne peut pas être contradictoire.
+
+Cette méthode fonctionne admirablement pour les petits systèmes. Mais l'arithmétique n'est pas un petit système. Elle parle d'une infinité de nombres, d'une infinité de relations. Comment construire l'infini ?
+
+C'est face à cette question que nous allons découvrir une arme inattendue : la contradiction elle-même. Car parfois, ce qui semble détruire peut aussi révéler.

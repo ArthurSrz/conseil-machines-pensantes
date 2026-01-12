@@ -1,0 +1,6 @@
+/.quarto/
+**/*.quarto_ipynb
+/_book/
+*.webp
+*.md
+convert_to_quarto.py
