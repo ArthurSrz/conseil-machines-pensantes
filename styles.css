@@ -1,0 +1,208 @@
+/* Styles personnalisés pour le livre sur Gödel */
+
+/* Typography */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+  color: #333;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Figures et images */
+.quarto-figure {
+  margin: 2em auto;
+  text-align: center;
+}
+
+.quarto-figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quarto-figure figcaption {
+  font-style: italic;
+  color: #666;
+  margin-top: 0.75em;
+  font-size: 0.95em;
+}
+
+/* Callout personnalisations */
+.callout {
+  margin: 1.5em 0;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Callout tip - pour les points essentiels (violet) */
+.callout-tip {
+  border-left-color: #9b59b6 !important;
+  background-color: #f5f0ff !important;
+}
+
+.callout-tip .callout-icon::before {
+  content: "💎";
+}
+
+/* Callout note - pour les analogies (bleu) */
+.callout-note {
+  border-left-color: #4a90e2 !important;
+  background-color: #f0f7ff !important;
+}
+
+.callout-note .callout-icon::before {
+  content: "🎯";
+}
+
+/* Callout warning - pour les avertissements (orange) */
+.callout-warning {
+  border-left-color: #f5a623 !important;
+  background-color: #fff8e6 !important;
+}
+
+/* Callout important - pour les définitions (rouge) */
+.callout-important {
+  border-left-color: #e74c3c !important;
+  background-color: #fff0f0 !important;
+}
+
+/* Callout caution - pour les leçons (vert) */
+.callout-caution {
+  border-left-color: #27ae60 !important;
+  background-color: #f0fff4 !important;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #9b59b6;
+  background-color: #f9f9f9;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  font-style: italic;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  margin: 1.5em 0;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #4a90e2;
+  color: white;
+  padding: 0.75em;
+  text-align: left;
+}
+
+td {
+  padding: 0.75em;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Code blocks */
+pre {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+code {
+  font-family: "Source Code Pro", Monaco, Consolas, monospace;
+  font-size: 0.9em;
+  background-color: #f8f9fa;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+/* Chapter navigation */
+.chapter-nav {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid #ddd;
+}
+
+/* Print adjustments */
+@media print {
+  .callout {
+    page-break-inside: avoid;
+  }
+
+  .quarto-figure {
+    page-break-inside: avoid;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* Table of contents styling */
+#TOC {
+  font-size: 0.95em;
+}
+
+#TOC a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+#TOC a:hover {
+  text-decoration: underline;
+}
+
+/* Équations mathématiques */
+.math {
+  font-size: 1.1em;
+}
+
+/* Section separators */
+hr {
+  border: none;
+  border-top: 2px solid #eee;
+  margin: 2em 0;
+}
+
+/* Links */
+a {
+  color: #4a90e2;
+}
+
+a:hover {
+  color: #2c3e50;
+}
+
+/* Book title styling */
+.title {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5em;
+}
+
+.subtitle {
+  font-size: 1.3em;
+  color: #666;
+  font-style: italic;
+}
+
+/* Author and date */
+.author, .date {
+  color: #888;
+  font-size: 1em;
+}
