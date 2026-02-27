@@ -1,0 +1,422 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "La théorie des graphes",
+    "section": "",
+    "text": "Préface",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "index.html#des-liens-invisibles",
+    "href": "index.html#des-liens-invisibles",
+    "title": "La théorie des graphes",
+    "section": "Des liens invisibles",
+    "text": "Des liens invisibles\nRegardez autour de vous.\nVotre réseau d’amis, les routes qui relient les villes de votre pays, les câbles sous-marins qui transportent vos messages d’un continent à l’autre, les réactions chimiques dans vos cellules, les pages web reliées par des hyperliens — tous ces systèmes, en apparence si différents, partagent une structure commune. Des points reliés par des liens.\nLes mathématiciens appellent cette structure un graphe. Et depuis près de trois siècles, ils développent une théorie pour comprendre ses propriétés — une théorie d’une élégance remarquable, née d’une promenade dominicale dans une ville prussienne et d’une question apparemment anodine sur des ponts.\n\n\n\n\n\n\nAstuceL’essentiel à retenir\n\n\n\nLa théorie des graphes est l’art de penser les relations. Partout où il y a des objets connectés — personnes, villes, molécules, idées — il y a un graphe. Et partout où il y a un graphe, il y a des propriétés cachées qui attendent d’être découvertes.\n\n\nCe livre raconte cette théorie, ses idées fondatrices, et leurs implications profondes.\n\n\n\nDes liens invisibles relient tout : personnes, villes, idées",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "index.html#à-qui-sadresse-ce-livre",
+    "href": "index.html#à-qui-sadresse-ce-livre",
+    "title": "La théorie des graphes",
+    "section": "À qui s’adresse ce livre ?",
+    "text": "À qui s’adresse ce livre ?\nVous n’avez pas besoin d’être mathématicien pour comprendre la théorie des graphes. Si vous savez dessiner des points et tracer des traits entre eux, vous avez tout le bagage nécessaire.\nCe livre est écrit pour :\n\nLe curieux qui a entendu parler des « réseaux » sans jamais vraiment comprendre la mathématique sous-jacente\nLe gestionnaire qui veut optimiser des flux, des plannings ou des itinéraires\nL’informaticien qui utilise des graphes au quotidien sans en connaître les fondements théoriques\nLe philosophe amateur fasciné par les structures qui relient les choses entre elles\nQuiconque aime les problèmes qui se résolvent avec un crayon et du papier",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "index.html#ce-que-vous-allez-découvrir",
+    "href": "index.html#ce-que-vous-allez-découvrir",
+    "title": "La théorie des graphes",
+    "section": "Ce que vous allez découvrir",
+    "text": "Ce que vous allez découvrir\nImaginez une soirée mondaine. Des couples arrivent, se serrent la main selon des règles précises. À la fin de la soirée, vous interrogez chaque personne : « Combien de mains avez-vous serrées ? » Les réponses sont toutes différentes — et pourtant, il est possible de déduire exactement combien de mains vous-même avez serrées.\nCe petit miracle logique — le problème des poignées de main de Bourbaki — est notre porte d’entrée dans la théorie des graphes. Et il illustre une vérité profonde : les contraintes locales (qui serre la main de qui) déterminent des propriétés globales (la structure entière du réseau).\n\n\n\n\n\n\nAttentionLes grandes idées de ce livre\n\n\n\nDe la soirée mondaine aux algorithmes qui gouvernent Internet, nous traverserons :\n\nLes séquences de degrés — pourquoi les contraintes locales déterminent la structure globale\nLes chemins et les cycles — comment naviguer dans un réseau, d’Euler à Dijkstra\nLes arbres — ces graphes minimaux qui sont partout, du câblage électrique à l’évolution\nLa coloration — l’art de répartir des ressources sans conflit\nLes flots — comment maximiser ce qui traverse un réseau\n\nChaque chapitre part d’un problème concret et en déploie la théorie.",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "index.html#le-plan-de-ce-livre",
+    "href": "index.html#le-plan-de-ce-livre",
+    "title": "La théorie des graphes",
+    "section": "Le plan de ce livre",
+    "text": "Le plan de ce livre\nNous progresserons par étapes, sans jamais présupposer de connaissances techniques.\nLe chapitre 1 ouvre le bal avec une énigme de soirée mondaine : le problème des poignées de main de Bourbaki. Comment prouver par récurrence que chaque membre du couple hôte serre exactement n mains quand n couples sont invités ? Ce premier chapitre introduit la notion de degré d’un sommet et la puissance du raisonnement par récurrence.\nLe chapitre 2 approfondit la notion de degré avec une question déstabilisante : dans une assemblée de n personnes, peut-il arriver que tout le monde connaisse un nombre différent de personnes ? La réponse — non, jamais — s’obtient grâce au principe des tiroirs, l’un des outils les plus simples et les plus puissants de la combinatoire.\nLe chapitre 3 révèle une loi universelle : dans tout graphe, la somme des degrés vaut exactement le double du nombre d’arêtes. Ce résultat, qui ne fait aucune exception, repose sur un argument de double comptage d’une simplicité désarmante — et son corollaire sur la parité des degrés sera la clé du chapitre suivant.\nLe chapitre 4 pose la question de la coloration : comment colorier une carte pour que deux pays voisins n’aient jamais la même couleur ? Le célèbre théorème des quatre couleurs et ses implications.\nLe chapitre 5 cherche les chemins les plus courts. L’algorithme de Dijkstra, les graphes pondérés, et les applications omniprésentes — de Google Maps aux réseaux de télécommunications.\nLe chapitre 6 étudie les flots dans les réseaux : comment maximiser le débit d’un réseau de transport ? Le théorème flot-max/coupe-min, l’une des plus belles dualités de la théorie.\nLe chapitre 7 s’intéresse aux graphes planaires — ceux qu’on peut dessiner sans croisement. La formule d’Euler, le théorème de Kuratowski, et l’art de la topologie combinatoire.\nLe chapitre 8 fait le pont vers le monde réel : réseaux sociaux, réseaux petit-monde, graphes sans échelle. Comment la théorie des graphes éclaire la structure cachée d’Internet, du cerveau et des sociétés.\nLe chapitre 9 clôt le voyage en explorant les limites : problèmes NP-complets, isomorphisme de graphes, et les questions ouvertes qui occupent encore les chercheurs. La théorie des graphes est vivante — et ses frontières reculent chaque année.",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "index.html#un-mot-sur-la-rigueur",
+    "href": "index.html#un-mot-sur-la-rigueur",
+    "title": "La théorie des graphes",
+    "section": "Un mot sur la rigueur",
+    "text": "Un mot sur la rigueur\nCe livre fait un choix assumé : la clarté plutôt que l’exhaustivité.\nLes démonstrations de la théorie des graphes peuvent être d’une grande technicité. Nous privilégierons l’intuition et les exemples concrets, en indiquant toujours les pistes pour aller plus loin.\nNotre guide principal est l’excellent ouvrage d’Olivier Cogis et Claudine Schwartz, La théorie des graphes [CS], dans la collection L chez Cassini. Ce livre de référence allie rigueur mathématique et accessibilité, et c’est à partir de ses problèmes et de ses démonstrations que nous avons formulé les questions soumises à notre conseil de machines pensantes.",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "index.html#pourquoi-les-graphes-comptent",
+    "href": "index.html#pourquoi-les-graphes-comptent",
+    "title": "La théorie des graphes",
+    "section": "Pourquoi les graphes comptent",
+    "text": "Pourquoi les graphes comptent\nOn pourrait croire que la théorie des graphes est une curiosité de mathématicien, un jeu de points et de traits sur du papier. Ce serait une erreur.\n\n\n\n\n\n\nPrécautionTrois leçons pour notre monde\n\n\n\nLa théorie des graphes nous enseigne que :\n\nLa structure détermine le comportement — comprendre les connexions, c’est comprendre le système\nLe local contraint le global — les propriétés de chaque nœud déterminent les propriétés du réseau entier\nLa simplicité cache la profondeur — des points et des traits suffisent à modéliser une complexité vertigineuse\n\nDans un monde de réseaux — sociaux, informatiques, biologiques, économiques — cette théorie n’a jamais été aussi indispensable.",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "index.html#une-invitation",
+    "href": "index.html#une-invitation",
+    "title": "La théorie des graphes",
+    "section": "Une invitation",
+    "text": "Une invitation\nLa théorie des graphes n’a pas fini de nous surprendre. Chaque décennie apporte de nouveaux problèmes, de nouvelles connexions avec d’autres domaines, de nouvelles applications.\nCe livre est une invitation à découvrir cette mathématique vivante — à travers des problèmes qui se comprennent en cinq minutes et dont les solutions éclairent le monde.\n\n\n\nLes ponts de Königsberg, berceau de la théorie des graphes\n\n\n\nMais avant de traverser ces ponts, il faut d’abord assister à une soirée mondaine. Les Bourbaki reçoivent ce soir. Chaque couple invité serre des mains — et de cette simple contrainte va naître un résultat étonnant. Commençons par le commencement : une question de poignées de main, et la notion de degré qui va tout éclairer.\n\n\nNote sur les références : Les citations entre crochets [CS], [E1], etc., renvoient à la bibliographie en fin d’ouvrage, qui recense les sources primaires historiques et les travaux de référence.",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "1_chapitre1.html",
+    "href": "1_chapitre1.html",
+    "title": "1  Chapitre 1 : Les poignées de main de Bourbaki",
+    "section": "",
+    "text": "1.1 Une soirée chez les Bourbaki\nLes Bourbaki reçoivent ce soir.\nMonsieur et Madame Bourbaki ont invité n couples à dîner. Les invités arrivent, et comme le veut l’usage, on se serre la main. Chacun serre la main de certaines personnes — jamais la sienne, jamais celle de son conjoint. Les poignées de main terminées, Monsieur Bourbaki, curieux de nature, interroge chaque personne présente (sauf lui-même) : « Combien de mains avez-vous serrées ? »\nIl obtient 2n + 1 réponses — une par personne interrogée (les n couples invités, plus Madame Bourbaki). Et voici la surprise : toutes les réponses sont différentes.\nLa question qui nous intéresse : combien de mains Madame Bourbaki a-t-elle serrées ? Et combien Monsieur Bourbaki lui-même ?\nCe problème, popularisé par Martin Gardner [Ga] et repris par Cogis et Schwartz [CS], est notre porte d’entrée dans la théorie des graphes. Sa solution repose sur un raisonnement par récurrence d’une élégance remarquable — et sa conclusion est aussi inattendue que satisfaisante.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapitre 1 : Les poignées de main de Bourbaki</span>"
+    ]
+  },
+  {
+    "objectID": "1_chapitre1.html#une-soirée-chez-les-bourbaki",
+    "href": "1_chapitre1.html#une-soirée-chez-les-bourbaki",
+    "title": "1  Chapitre 1 : Les poignées de main de Bourbaki",
+    "section": "",
+    "text": "AstuceQui sont les Bourbaki ?\n\n\n\nLe nom n’est pas anodin. « Nicolas Bourbaki » est le pseudonyme collectif d’un groupe de mathématiciens français — parmi lesquels André Weil, Jean Dieudonné, Henri Cartan — qui, à partir des années 1930, entreprirent de réécrire les mathématiques de façon rigoureuse et unifiée. Leur ambition : montrer que derrière le désordre apparent des résultats mathématiques se cache une structure profonde et ordonnée.\nC’est exactement ce que ce petit problème de poignées de main va illustrer : une situation apparemment chaotique possède une structure cachée, nette et invariable.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapitre 1 : Les poignées de main de Bourbaki</span>"
+    ]
+  },
+  {
+    "objectID": "1_chapitre1.html#le-problème-formellement",
+    "href": "1_chapitre1.html#le-problème-formellement",
+    "title": "1  Chapitre 1 : Les poignées de main de Bourbaki",
+    "section": "1.2 Le problème, formellement",
+    "text": "1.2 Le problème, formellement\nPosons les choses précisément.\nIl y a 2n + 2 personnes à la soirée : les n couples invités, plus le couple Bourbaki. Chaque personne peut serrer entre 0 et 2n mains (toutes les personnes présentes sauf elle-même et son conjoint).\n\n\n\n\n\n\nImportantDéfinition : le degré d’un sommet\n\n\n\nEn théorie des graphes, chaque personne est un sommet (un point) et chaque poignée de main est une arête (un trait qui relie deux points). Le nombre de mains serrées par une personne s’appelle son degré.\nFormellement : le degré d’un sommet v, noté d(v), est le nombre d’arêtes incidentes à v — c’est-à-dire le nombre de connexions directes de ce sommet.\nC’est la notion centrale de ce chapitre. Elle relie une quantité locale (combien de voisins a un sommet) à la structure globale du graphe.\n\n\nMonsieur Bourbaki interroge 2n + 1 personnes. Chacune donne un nombre différent. Or les réponses possibles vont de 0 à 2n — c’est exactement 2n + 1 valeurs distinctes. Donc les réponses sont exactement : 0, 1, 2, …, 2n.\nAutrement dit, quelqu’un n’a serré aucune main, quelqu’un en a serré exactement une, et ainsi de suite jusqu’à quelqu’un qui a serré 2n mains — le maximum possible. Toute la gamme des degrés est couverte.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapitre 1 : Les poignées de main de Bourbaki</span>"
+    ]
+  },
+  {
+    "objectID": "1_chapitre1.html#le-cas-le-plus-simple",
+    "href": "1_chapitre1.html#le-cas-le-plus-simple",
+    "title": "1  Chapitre 1 : Les poignées de main de Bourbaki",
+    "section": "1.3 Le cas le plus simple",
+    "text": "1.3 Le cas le plus simple\nCommençons par le cas n = 1. Il y a un seul couple invité — appelons-les Alice et Antoine — plus Monsieur et Madame Bourbaki. Quatre personnes en tout.\nMonsieur Bourbaki interroge les trois autres. Les réponses sont 0, 1, et 2 (toutes différentes, exactement les valeurs de 0 à 2n = 2).\nQui a répondu 2 ? Cette personne a serré la main de tout le monde sauf de son conjoint. Il y a trois personnes possibles (en excluant soi-même et son conjoint) — et elle les a toutes serrées. Disons que c’est Alice.\nQui a répondu 0 ? Cette personne n’a serré aucune main. Si Alice a serré la main de tout le monde (sauf Antoine), alors Antoine ne peut pas être celui qui a répondu 0 — car Alice lui a serré la main. Mais Alice a serré la main de Monsieur Bourbaki et de Madame Bourbaki. Donc la personne ayant répondu 0 ne peut être que Antoine — le conjoint de celle ayant répondu 2.\n\n\n\nLe cas de base (n=1) : Alice serre 2 mains, Antoine 0 — il reste Madame Bourbaki avec 1\n\n\nVoici la clé : la personne ayant le degré maximal (2n) et celle ayant le degré 0 forment nécessairement un couple. Si quelqu’un a serré la main de tous (sauf son conjoint), alors son conjoint est le seul à pouvoir n’avoir serré aucune main — car tout le monde a reçu au moins une poignée de la personne au degré maximal.\nRécapitulons : Alice a répondu 2, Antoine a répondu 0. Il reste Madame Bourbaki qui a répondu 1.\nEt Monsieur Bourbaki ? Il a serré la main d’Alice (qui a serré la main de tout le monde sauf Antoine), mais pas d’Antoine (qui n’a serré aucune main). Donc Monsieur Bourbaki a aussi serré 1 main.\nRésultat : pour n = 1, chaque membre du couple Bourbaki a serré exactement n = 1 main.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapitre 1 : Les poignées de main de Bourbaki</span>"
+    ]
+  },
+  {
+    "objectID": "1_chapitre1.html#le-mécanisme-de-lélimination",
+    "href": "1_chapitre1.html#le-mécanisme-de-lélimination",
+    "title": "1  Chapitre 1 : Les poignées de main de Bourbaki",
+    "section": "1.4 Le mécanisme de l’élimination",
+    "text": "1.4 Le mécanisme de l’élimination\nLe cas de base nous a révélé un principe puissant : les extrêmes s’éliminent par paires.\nPour le cas général, voici comment fonctionne la récurrence. Supposons le résultat vrai pour n − 1 couples, et montrons-le pour n couples.\nParmi les 2n + 1 réponses (0, 1, 2, …, 2n), considérons la personne qui a répondu 2n — appelons-la Max. Max a serré la main de toutes les 2n personnes possibles (tout le monde sauf Max et son conjoint). Qui a répondu 0 ? Par le même raisonnement que dans le cas de base, c’est nécessairement le conjoint de Max — appelons-le Min.\n\n\n\n\n\n\nNoteAnalogie : le jeu des chaussettes\n\n\n\nImaginez une boîte contenant 2n + 2 chaussettes, deux de chaque couleur — chaque couleur représente un couple. On tire deux chaussettes et on les apparie, à condition qu’elles ne soient pas de la même couleur. Puis on les retire de la boîte.\nC’est exactement le mécanisme de la preuve. À chaque étape, on identifie le couple extrême (Max et Min) et on les « retire de la boîte ». En les retirant, chaque personne restante perd une poignée de main dans son décompte — car Max avait serré la main de tout le monde. Les réponses restantes, après ajustement, deviennent : 0, 1, 2, …, 2(n − 1).\nOn se retrouve exactement dans la situation de départ, mais avec n − 1 couples au lieu de n. Après n éliminations, il ne reste que les deux chaussettes de la couleur « Bourbaki » — le couple hôte, ayant participé à n associations chacun.\n\n\nVoilà toute l’astuce. À chaque étape :\n\nOn identifie le couple extrême (degré 2n et degré 0)\nOn les retire — ils forment un couple invité\nOn ajuste les degrés des personnes restantes (chacune perd 1, car Max avait serré la main de chacune)\nOn obtient un problème identique avec n − 1 couples\n\nAprès n éliminations, il ne reste que le couple Bourbaki. Et à chaque élimination, les degrés extrêmes étaient appariés. Par symétrie, les deux membres du couple Bourbaki se retrouvent avec le même nombre de poignées de main : exactement n.\n\n\n\n\n\n\nAttentionAttention : une invariance remarquable\n\n\n\nCe résultat est bien plus fort qu’il n’y paraît. Il ne dépend d’aucune disposition particulière des invités. Peu importe qui serre la main de qui — tant que toutes les réponses sont différentes, le nombre de poignées du couple Bourbaki est forcé par le simple comptage du nombre de couples.\nC’est une propriété structurelle du graphe, pas un accident de la soirée. Dès que le nombre total de couples est fixé, le résultat est déterminé.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapitre 1 : Les poignées de main de Bourbaki</span>"
+    ]
+  },
+  {
+    "objectID": "1_chapitre1.html#pourquoi-cest-surprenant",
+    "href": "1_chapitre1.html#pourquoi-cest-surprenant",
+    "title": "1  Chapitre 1 : Les poignées de main de Bourbaki",
+    "section": "1.5 Pourquoi c’est surprenant",
+    "text": "1.5 Pourquoi c’est surprenant\nArrêtons-nous un instant pour mesurer ce résultat.\nOn vous dit que 2n + 1 personnes donnent des réponses toutes différentes. Sans aucune autre information — sans savoir qui a serré la main de qui — vous pouvez déduire exactement le nombre de poignées de la personne non interrogée. Et pas seulement ça : vous savez que Monsieur et Madame Bourbaki ont exactement le même score.\n\n\n\nLe graphe des poignées de main : chaque sommet est une personne, chaque arête une poignée\n\n\nCe résultat illustre une propriété fondamentale des graphes : la séquence de degrés — la liste ordonnée du nombre de connexions de chaque sommet — contient une quantité énorme d’information sur la structure du graphe. Dans notre problème, les degrés forment la suite complète 0, 1, 2, …, 2n. Le couple Bourbaki occupe les deux valeurs médianes : n et n. Sous la contrainte « pas de poignée avec son partenaire », les degrés sont forcés à couvrir toute la gamme possible.\nEn d’autres termes, le problème révèle trois propriétés profondes :\n\nLa somme des degrés est toujours paire — chaque poignée de main est comptée deux fois (une par chaque participant)\nLes degrés couvrent toute la gamme — la contrainte conjugale force une couverture complète de 0 à 2n\nLe degré médian est déterminé — il correspond exactement au nombre de couples invités\n\nConnaître la séquence de degrés, c’est déjà savoir beaucoup sur le réseau. Ce principe — les contraintes locales déterminent la structure globale — nous accompagnera tout au long de ce livre.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapitre 1 : Les poignées de main de Bourbaki</span>"
+    ]
+  },
+  {
+    "objectID": "1_chapitre1.html#ce-que-nous-avons-appris",
+    "href": "1_chapitre1.html#ce-que-nous-avons-appris",
+    "title": "1  Chapitre 1 : Les poignées de main de Bourbaki",
+    "section": "1.6 Ce que nous avons appris",
+    "text": "1.6 Ce que nous avons appris\nRésumons avant de poursuivre.\n\n\n\n\n\n\n\nConcept\nCe qu’il faut retenir\n\n\n\n\nLe degré d’un sommet\nLe nombre de connexions directes — la mesure la plus fondamentale en théorie des graphes\n\n\nLa séquence de degrés\nLa suite ordonnée 0, 1, …, 2n : elle encode la structure du réseau et le couple Bourbaki occupe les valeurs médianes\n\n\nLa preuve par récurrence\nRéduire un problème de taille n à un problème de taille n − 1, en identifiant les paires extrêmes\n\n\nL’invariance structurelle\nLe résultat ne dépend d’aucune disposition particulière — il est forcé par les contraintes du graphe",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapitre 1 : Les poignées de main de Bourbaki</span>"
+    ]
+  },
+  {
+    "objectID": "1_chapitre1.html#vers-lassemblée-et-les-tiroirs",
+    "href": "1_chapitre1.html#vers-lassemblée-et-les-tiroirs",
+    "title": "1  Chapitre 1 : Les poignées de main de Bourbaki",
+    "section": "1.7 Vers l’assemblée et les tiroirs",
+    "text": "1.7 Vers l’assemblée et les tiroirs\nLe problème de Bourbaki nous a montré qu’un graphe — des points reliés par des traits — peut encoder une situation sociale et révéler des structures cachées. La notion de degré, si simple en apparence, s’est avérée d’une puissance remarquable. Même un problème de soirée se traduit en un graphe où les propriétés — degrés, parité, symétrie — sont très structurées.\nChez les Bourbaki, toutes les réponses étaient différentes — et cette hypothèse suffisait à déterminer la structure entière du graphe. Mais est-ce seulement possible que tous les degrés soient différents ? Peut-on imaginer une assemblée de n personnes où chacun connaît un nombre différent de personnes ?\nLa réponse, aussi surprenante que définitive, va mobiliser un principe d’une simplicité désarmante — le principe des tiroirs — et confirmer une leçon fondamentale : les degrés d’un graphe ne sont jamais aussi libres qu’on le croit.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapitre 1 : Les poignées de main de Bourbaki</span>"
+    ]
+  },
+  {
+    "objectID": "2_chapitre2.html",
+    "href": "2_chapitre2.html",
+    "title": "2  Chapitre 2 : L’assemblée et les tiroirs",
+    "section": "",
+    "text": "2.1 Un théorème de soirée\nDans le chapitre précédent, les Bourbaki nous ont montré qu’une simple question de poignées de main révèle des structures cachées dans un graphe. La notion de degré — combien de connexions possède chaque sommet — s’est avérée d’une puissance inattendue.\nPosons maintenant une question encore plus élémentaire.\nVous êtes dans une assemblée de n personnes. Chacun connaît un certain nombre d’autres personnes présentes. Peut-il arriver que tout le monde connaisse un nombre différent de personnes ? Autrement dit : dans une assemblée de n personnes, est-il vrai qu’au moins deux personnes ont le même nombre de connaissances ?\nLa réponse est oui — toujours, dans n’importe quelle assemblée, quels que soient les liens entre les personnes. Et la preuve tient en quelques lignes.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Chapitre 2 : L'assemblée et les tiroirs</span>"
+    ]
+  },
+  {
+    "objectID": "2_chapitre2.html#du-problème-social-au-graphe",
+    "href": "2_chapitre2.html#du-problème-social-au-graphe",
+    "title": "2  Chapitre 2 : L’assemblée et les tiroirs",
+    "section": "2.2 Du problème social au graphe",
+    "text": "2.2 Du problème social au graphe\nComme au chapitre précédent, la première étape consiste à traduire le problème en langage de graphe.\n\n\n\n\n\n\nImportantModélisation : de l’assemblée au graphe\n\n\n\n\n\n\n\n\n\n\nÉlément de la situation réelle\nÉlément du graphe\n\n\n\n\nChaque personne\nUn sommet (un point)\n\n\nDeux personnes qui se connaissent\nUne arête (un trait entre deux points)\n\n\nNombre de connaissances d’une personne\nLe degré du sommet\n\n\n\nUne assemblée de n personnes devient ainsi un graphe simple à n sommets — sans boucles (on ne se connaît pas soi-même) et sans arêtes multiples (on se connaît ou on ne se connaît pas, il n’y a pas de demi-mesure).\n\n\nLa question « au moins deux personnes ont-elles le même nombre de connaissances ? » devient alors : « existe-t-il deux sommets qui ont le même degré ? »\nEt la question adverse — celle qu’on va réfuter — est : « peut-on construire un graphe à n sommets où tous les degrés sont différents ? »\nSi la réponse est non, alors notre théorème est prouvé.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Chapitre 2 : L'assemblée et les tiroirs</span>"
+    ]
+  },
+  {
+    "objectID": "2_chapitre2.html#lincompatibilité-des-extrêmes",
+    "href": "2_chapitre2.html#lincompatibilité-des-extrêmes",
+    "title": "2  Chapitre 2 : L’assemblée et les tiroirs",
+    "section": "2.3 L’incompatibilité des extrêmes",
+    "text": "2.3 L’incompatibilité des extrêmes\nQuels sont les degrés possibles ? Dans un graphe à n sommets, chaque sommet peut avoir entre 0 et n − 1 connexions. Le degré minimal est 0 (la personne ne connaît personne), et le degré maximal est n − 1 (la personne connaît tout le monde).\nCela fait n valeurs possibles : 0, 1, 2, …, n − 1. Il y a n sommets et n valeurs. À première vue, on pourrait attribuer un degré différent à chaque sommet — un par valeur.\nMais voici le piège.\nSupposons qu’un sommet ait le degré n − 1 — appelons-le Max. Max est relié à tous les autres sommets. Chaque personne dans l’assemblée connaît au moins Max. Personne ne peut donc avoir le degré 0.\nRéciproquement, si quelqu’un a le degré 0 — appelons-le Min — Min ne connaît personne. Personne ne peut alors prétendre connaître tout le monde, car il faudrait connaître Min, ce qui est impossible puisque Min ne connaît personne. (La connaissance est réciproque dans notre modèle : si je vous connais, vous me connaissez.)\n\n\n\nImpossible : si Max connaît tout le monde, Min ne peut connaître personne\n\n\n\n\n\n\n\n\nNoteAnalogie : la salle de classe\n\n\n\nImaginez une salle de classe. Si un élève a échangé son numéro de téléphone avec tous les autres élèves (degré n − 1), alors chaque élève possède au moins un numéro — celui de cet élève sociable. Personne ne peut prétendre n’avoir aucun numéro (degré 0).\nLes extrêmes s’excluent mutuellement. Le sommet le plus connecté empêche l’existence d’un sommet complètement isolé, et vice versa.\n\n\nConclusion : les degrés 0 et n − 1 ne peuvent jamais apparaître simultanément dans le même graphe. Il faut choisir l’un ou l’autre — mais jamais les deux.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Chapitre 2 : L'assemblée et les tiroirs</span>"
+    ]
+  },
+  {
+    "objectID": "2_chapitre2.html#le-principe-des-tiroirs",
+    "href": "2_chapitre2.html#le-principe-des-tiroirs",
+    "title": "2  Chapitre 2 : L’assemblée et les tiroirs",
+    "section": "2.4 Le principe des tiroirs",
+    "text": "2.4 Le principe des tiroirs\nNous avons maintenant tous les ingrédients.\nIl y a n personnes (les « objets »). Les valeurs de degré possibles sont les « tiroirs ». Sans la restriction précédente, il y aurait n tiroirs : {0, 1, 2, …, n − 1}. Mais puisque 0 et n − 1 ne peuvent pas coexister, le nombre réel de tiroirs disponibles est au plus n − 1 :\n\nSoit les degrés appartiennent à {0, 1, 2, …, n − 2} (si personne ne connaît tout le monde)\nSoit ils appartiennent à {1, 2, …, n − 1} (si personne n’est complètement isolé)\n\nDans les deux cas : n objets, n − 1 tiroirs.\n\n\n\n\n\n\nAstuceLe principe des tiroirs (Dirichlet)\n\n\n\nSi l’on range n objets dans n − 1 tiroirs, alors au moins un tiroir contient deux objets ou plus.\nC’est l’un des principes les plus simples et les plus puissants de toute la combinatoire. Il ne dit rien sur quel tiroir est surchargé, ni quels objets le partagent — il dit seulement que la collision est inévitable.\nEn allemand, on l’appelle le Schubfachprinzip — littéralement « principe des casiers ». En anglais, le pigeonhole principle : si n pigeons se posent dans n − 1 nids, deux pigeons partagent le même nid.\n\n\nAppliqué à notre problème : n personnes, au plus n − 1 degrés possibles. Par le principe des tiroirs, au moins deux personnes ont le même degré — c’est-à-dire le même nombre de connaissances.\n\n\n\nn personnes dans n − 1 tiroirs : une collision est inévitable\n\n\nEt voilà. En quatre lignes de raisonnement — modélisation, incompatibilité des extrêmes, comptage des tiroirs, conclusion — le problème est résolu. La preuve est si courte qu’elle peut sembler trompeuse. Mais c’est justement sa beauté : elle exploite une contrainte structurelle que personne ne voit au premier regard.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Chapitre 2 : L'assemblée et les tiroirs</span>"
+    ]
+  },
+  {
+    "objectID": "2_chapitre2.html#le-fil-rouge-les-degrés-contraignent-tout",
+    "href": "2_chapitre2.html#le-fil-rouge-les-degrés-contraignent-tout",
+    "title": "2  Chapitre 2 : L’assemblée et les tiroirs",
+    "section": "2.5 Le fil rouge : les degrés contraignent tout",
+    "text": "2.5 Le fil rouge : les degrés contraignent tout\nArrêtons-nous un instant pour relier ce résultat au chapitre précédent.\nChez les Bourbaki, la question était : quand toutes les réponses sont différentes, que peut-on en déduire ? La réponse : le couple hôte serre exactement n mains. Le fait que les degrés couvrent toute la gamme {0, 1, …, 2n} était une hypothèse — et elle suffisait à déterminer la structure entière du graphe.\nIci, la question est inverse : est-il seulement possible que tous les degrés soient différents ? La réponse est non — pas dans un graphe simple. La contrainte d’incompatibilité entre 0 et n − 1 crée un manque, et ce manque force une collision.\n\n\n\n\n\n\nAttentionLe même message, deux démonstrations\n\n\n\nChapitre 1 et chapitre 2 racontent la même histoire sous deux angles différents :\n\nBourbaki : si les degrés couvrent toute la gamme, la structure est entièrement déterminée (le couple hôte a degré n)\nL’assemblée : les degrés ne peuvent pas tous être différents dans un graphe simple (collision inévitable)\n\nDans les deux cas, c’est la séquence de degrés qui contient l’information clé. Le local (combien de connexions a chaque sommet) contraint le global (la structure du réseau tout entier). Ce principe est l’une des idées fondatrices de la théorie des graphes.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Chapitre 2 : L'assemblée et les tiroirs</span>"
+    ]
+  },
+  {
+    "objectID": "2_chapitre2.html#ce-que-nous-avons-appris",
+    "href": "2_chapitre2.html#ce-que-nous-avons-appris",
+    "title": "2  Chapitre 2 : L’assemblée et les tiroirs",
+    "section": "2.6 Ce que nous avons appris",
+    "text": "2.6 Ce que nous avons appris\n\n\n\n\n\n\n\nConcept\nCe qu’il faut retenir\n\n\n\n\nLe graphe simple\nPas de boucles, pas d’arêtes multiples — le modèle naturel des relations sociales\n\n\nL’incompatibilité 0 / n−1\nSi quelqu’un connaît tout le monde, personne ne peut être complètement isolé — et réciproquement\n\n\nLe principe des tiroirs\nn objets dans n−1 cases = collision garantie. Simple, puissant, universel\n\n\nDegrés et structure\nLa séquence de degrés d’un graphe est soumise à des contraintes cachées qui en limitent la liberté",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Chapitre 2 : L'assemblée et les tiroirs</span>"
+    ]
+  },
+  {
+    "objectID": "2_chapitre2.html#vers-une-loi-universelle",
+    "href": "2_chapitre2.html#vers-une-loi-universelle",
+    "title": "2  Chapitre 2 : L’assemblée et les tiroirs",
+    "section": "2.7 Vers une loi universelle",
+    "text": "2.7 Vers une loi universelle\nLes deux premiers chapitres nous ont montré que les degrés — cette simple mesure du nombre de connexions de chaque sommet — recèlent une puissance insoupçonnée. Ils déterminent la structure chez Bourbaki, ils forcent des collisions dans l’assemblée.\nMais ces résultats dépendaient de conditions particulières. Chez Bourbaki, les réponses devaient être toutes différentes. Dans l’assemblée, on exploitait l’incompatibilité entre le degré 0 et le degré n − 1.\nExiste-t-il une propriété des degrés qui soit vraie toujours — pour n’importe quel graphe, sans aucune condition ? Un résultat si fondamental qu’il ne dépend de rien d’autre que la définition même de ce qu’est un graphe ? La réponse est oui — et ce résultat tient en une seule ligne. Il va transformer notre compréhension de ce que les degrés peuvent nous apprendre.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Chapitre 2 : L'assemblée et les tiroirs</span>"
+    ]
+  },
+  {
+    "objectID": "3_chapitre3.html",
+    "href": "3_chapitre3.html",
+    "title": "3  Chapitre 3 : La loi universelle des degrés",
+    "section": "",
+    "text": "3.1 Un résultat qui ne fait pas d’exception\nLes deux premiers chapitres nous ont montré que les degrés — le nombre de connexions de chaque sommet — recèlent une puissance insoupçonnée. Chez les Bourbaki, la séquence de degrés déterminait la structure entière du graphe. Dans l’assemblée, le principe des tiroirs forçait une collision entre degrés.\nMais ces résultats dépendaient de conditions particulières : chez Bourbaki, les réponses devaient être toutes différentes ; dans l’assemblée, on exploitait l’incompatibilité entre le degré 0 et le degré n − 1.\nExiste-t-il une propriété des degrés qui soit vraie toujours — pour n’importe quel graphe, quelle que soit sa forme, sa taille, son nombre de connexions ? Un théorème sans condition, sans hypothèse, sans exception ?\nOui. Et il tient en une ligne.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Chapitre 3 : La loi universelle des degrés</span>"
+    ]
+  },
+  {
+    "objectID": "3_chapitre3.html#le-théorème",
+    "href": "3_chapitre3.html#le-théorème",
+    "title": "3  Chapitre 3 : La loi universelle des degrés",
+    "section": "3.2 Le théorème",
+    "text": "3.2 Le théorème\nPrenez n’importe quel graphe. Additionnez les degrés de tous ses sommets. Vous obtiendrez toujours exactement le double du nombre d’arêtes.\nEn notation mathématique :\n\\[\\sum_{v} d(v) = 2 \\times |E|\\]\noù la somme porte sur tous les sommets v du graphe, et |E| désigne le nombre d’arêtes.\n\n\n\n\n\n\nImportantLa propriété de la somme des degrés (lemme des poignées de main)\n\n\n\nDans tout graphe, la somme des degrés de tous les sommets est égale au double du nombre d’arêtes.\nCe résultat porte le nom de lemme des poignées de main (handshaking lemma en anglais) — car si chaque arête est une poignée de main, chaque poignée implique deux personnes, et chacune la compte dans son total.\nIl n’y a aucune condition : le graphe peut être connexe ou non, régulier ou irrégulier, avec 3 sommets ou 3 milliards. La propriété tient toujours.\n\n\nC’est remarquable. En mathématiques, les résultats universels sont rares. La plupart des théorèmes commencent par « Si le graphe est connexe… », « Si les degrés vérifient… », « Si le graphe est planaire… ». Celui-ci ne demande rien. Il est vrai par la seule vertu de la définition de ce qu’est un graphe.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Chapitre 3 : La loi universelle des degrés</span>"
+    ]
+  },
+  {
+    "objectID": "3_chapitre3.html#lintuition-le-double-comptage",
+    "href": "3_chapitre3.html#lintuition-le-double-comptage",
+    "title": "3  Chapitre 3 : La loi universelle des degrés",
+    "section": "3.3 L’intuition : le double comptage",
+    "text": "3.3 L’intuition : le double comptage\nPourquoi cette propriété est-elle vraie ? L’argument est d’une simplicité désarmante.\nPrenons une arête quelconque — disons celle qui relie le sommet u au sommet v. Cette arête contribue 1 au degré de u, et 1 au degré de v. Elle est donc comptée deux fois dans la somme des degrés — une fois par chaque extrémité.\nPuisque chaque arête est comptée exactement deux fois, la somme totale des degrés vaut exactement deux fois le nombre d’arêtes.\n\n\n\n\n\n\nNoteAnalogie : les appels téléphoniques\n\n\n\nImaginez un groupe d’amis. Chaque appel téléphonique implique exactement deux personnes. Si vous demandez à chacun « Combien d’appels avez-vous passés aujourd’hui ? » et que vous additionnez toutes les réponses, vous compterez chaque appel deux fois — une fois du côté de l’appelant, une fois du côté de l’appelé.\nSi le total des réponses est 42, il y a eu exactement 21 appels. Toujours. Sans exception. Peu importe qui a appelé qui, ni combien de personnes étaient dans le groupe.\nC’est le double comptage — une technique qui consiste à compter la même chose de deux façons différentes. L’égalité qui en résulte est indestructible, car elle ne repose sur aucune hypothèse.\n\n\nC’est ce qu’on appelle en combinatoire le double comptage (double counting). On compte la même quantité — le nombre total de « bouts d’arêtes » — de deux façons :\n\nPar les sommets : chaque sommet contribue autant de bouts d’arêtes que son degré → total = somme des degrés\nPar les arêtes : chaque arête a exactement 2 bouts → total = 2 × nombre d’arêtes\n\nLes deux comptes portent sur la même chose, donc ils sont égaux. Point final.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Chapitre 3 : La loi universelle des degrés</span>"
+    ]
+  },
+  {
+    "objectID": "3_chapitre3.html#vérifions-sur-des-exemples",
+    "href": "3_chapitre3.html#vérifions-sur-des-exemples",
+    "title": "3  Chapitre 3 : La loi universelle des degrés",
+    "section": "3.4 Vérifions sur des exemples",
+    "text": "3.4 Vérifions sur des exemples\nRien ne vaut quelques exemples concrets pour se convaincre.\n\n\n\nTrois graphes, une même loi : la somme des degrés vaut toujours le double des arêtes\n\n\nLe triangle (3 sommets, 3 arêtes) :\nChaque sommet a degré 2. Somme des degrés = 2 + 2 + 2 = 6. Nombre d’arêtes = 3. Et bien : 6 = 2 × 3. ✓\nL’étoile (1 centre + 4 branches, donc 5 sommets, 4 arêtes) :\nLe centre a degré 4, chaque branche a degré 1. Somme des degrés = 4 + 1 + 1 + 1 + 1 = 8. Nombre d’arêtes = 4. Et bien : 8 = 2 × 4. ✓\nLe carré (4 sommets, 4 arêtes) :\nChaque sommet a degré 2. Somme des degrés = 2 + 2 + 2 + 2 = 8. Nombre d’arêtes = 4. Et bien : 8 = 2 × 4. ✓\nUn graphe déconnecté (un triangle + un sommet isolé, donc 4 sommets, 3 arêtes) :\nDegrés : 2, 2, 2, 0. Somme = 6. Arêtes = 3. Et bien : 6 = 2 × 3. ✓\nMême le sommet isolé ne perturbe rien — son degré 0 n’ajoute rien à la somme. La propriété ne demande pas que le graphe soit connexe.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Chapitre 3 : La loi universelle des degrés</span>"
+    ]
+  },
+  {
+    "objectID": "3_chapitre3.html#le-corollaire-de-parité",
+    "href": "3_chapitre3.html#le-corollaire-de-parité",
+    "title": "3  Chapitre 3 : La loi universelle des degrés",
+    "section": "3.5 Le corollaire de parité",
+    "text": "3.5 Le corollaire de parité\nLe théorème a une conséquence immédiate, qui est peut-être encore plus surprenante que le résultat lui-même.\nPuisque la somme des degrés vaut 2 × |E|, cette somme est toujours paire — quel que soit le graphe.\nOr, que se passe-t-il quand on additionne des nombres ? Si on mélange des nombres pairs et impairs, la somme n’est paire que si le nombre de termes impairs est lui-même pair. (Vérifiez : 3 + 5 = 8, pair ; 3 + 5 + 7 = 15, impair.)\nConclusion :\n\n\n\n\n\n\nAstuceLe corollaire de parité\n\n\n\nDans tout graphe, le nombre de sommets de degré impair est pair.\nAutrement dit : il est impossible d’avoir un nombre impair de sommets avec un degré impair. Si trois personnes dans une salle ont chacune serré un nombre impair de mains, alors une quatrième personne (au moins) a aussi serré un nombre impair de mains.\nCe résultat ne fait aucune hypothèse sur le graphe. Il est vrai partout, toujours, sans exception.\n\n\nCe corollaire semble anodin. Mais il va se révéler décisif au chapitre suivant, quand nous chercherons à traverser les ponts de Königsberg. Euler montrera que l’existence d’un chemin traversant toutes les arêtes exactement une fois dépend précisément de la parité des degrés — et c’est le corollaire de parité qui limitera les configurations possibles.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Chapitre 3 : La loi universelle des degrés</span>"
+    ]
+  },
+  {
+    "objectID": "3_chapitre3.html#pourquoi-cest-universel",
+    "href": "3_chapitre3.html#pourquoi-cest-universel",
+    "title": "3  Chapitre 3 : La loi universelle des degrés",
+    "section": "3.6 Pourquoi c’est universel",
+    "text": "3.6 Pourquoi c’est universel\nArrêtons-nous un instant pour comprendre ce qui rend cette propriété si extraordinairement robuste.\nLa plupart des théorèmes en théorie des graphes reposent sur des propriétés structurelles : le graphe doit être connexe, planaire, biparti, k-régulier… Ces conditions sélectionnent une sous-famille de graphes, et le théorème ne s’applique qu’à cette sous-famille.\nLe lemme des poignées de main ne repose sur rien de tel. Il ne demande pas que le graphe soit connexe. Il ne demande pas qu’il soit fini (l’argument fonctionne même pour les graphes localement finis). Il ne demande pas que les degrés vérifient une condition particulière.\n\n\n\n\n\n\nAttentionPourquoi l’universalité ?\n\n\n\nLe lemme des poignées de main est universel parce qu’il ne repose que sur la définition même d’un graphe :\n\nUn graphe est un ensemble de sommets et un ensemble d’arêtes\nChaque arête relie exactement deux sommets\nLe degré d’un sommet est le nombre d’arêtes qui le touchent\n\nL’argument de double comptage n’utilise rien d’autre. Il ne fait aucune hypothèse supplémentaire. C’est pourquoi il est indestructible — pour le réfuter, il faudrait changer la définition même de ce qu’est un graphe.\nEn mathématiques, les résultats les plus puissants sont souvent ceux qui demandent le moins.\n\n\n\n\n\nChaque arête contribue 1 à chaque extrémité — le double comptage est indestructible",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Chapitre 3 : La loi universelle des degrés</span>"
+    ]
+  },
+  {
+    "objectID": "3_chapitre3.html#ce-que-nous-avons-appris",
+    "href": "3_chapitre3.html#ce-que-nous-avons-appris",
+    "title": "3  Chapitre 3 : La loi universelle des degrés",
+    "section": "3.7 Ce que nous avons appris",
+    "text": "3.7 Ce que nous avons appris\n\n\n\n\n\n\n\nConcept\nCe qu’il faut retenir\n\n\n\n\nSomme des degrés = 2 × arêtes\nLe lemme des poignées de main — vrai pour tout graphe, sans exception\n\n\nLe double comptage\nCompter la même chose de deux façons donne une égalité indestructible\n\n\nLe corollaire de parité\nLe nombre de sommets de degré impair est toujours pair\n\n\nL’universalité\nLe résultat ne repose que sur la définition de graphe — aucune hypothèse structurelle nécessaire",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Chapitre 3 : La loi universelle des degrés</span>"
+    ]
+  },
+  {
+    "objectID": "3_chapitre3.html#vers-les-ponts-de-königsberg",
+    "href": "3_chapitre3.html#vers-les-ponts-de-königsberg",
+    "title": "3  Chapitre 3 : La loi universelle des degrés",
+    "section": "3.8 Vers les ponts de Königsberg",
+    "text": "3.8 Vers les ponts de Königsberg\nNous avons maintenant trois outils puissants dans notre boîte à outils : les séquences de degrés (chapitre 1), le principe des tiroirs (chapitre 2), et la propriété de la somme des degrés avec son corollaire de parité (ce chapitre). Trois résultats, trois niveaux de généralité — et les trois tournent autour de la même notion : le degré.\nIl est temps de mettre ces outils à l’épreuve. En 1736, les habitants de Königsberg — une ville prussienne traversée par la rivière Pregel et parsemée d’îles reliées par sept ponts — se posaient une question : peut-on se promener en traversant chaque pont exactement une fois, sans jamais repasser par le même ?\nLeonhard Euler va montrer que la réponse est non — et que la raison tient précisément à la parité des degrés. Le corollaire que nous venons de démontrer va devenir la clé de voûte de son raisonnement, et donner naissance, au passage, à une discipline mathématique entière.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Chapitre 3 : La loi universelle des degrés</span>"
+    ]
+  },
+  {
+    "objectID": "10_bibliographie.html",
+    "href": "10_bibliographie.html",
+    "title": "Annexe A — Bibliographie",
+    "section": "",
+    "text": "A.1 Ouvrage de référence principal\nCette bibliographie rassemble les sources de référence sur la théorie des graphes, ses fondements historiques, et ses applications modernes.\n[CS] Cogis, O., & Schwartz, C. (2003). La théorie des graphes. Collection L. Paris : Cassini.",
+    "crumbs": [
+      "Annexes",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Bibliographie</span>"
+    ]
+  },
+  {
+    "objectID": "10_bibliographie.html#ouvrage-de-référence-principal",
+    "href": "10_bibliographie.html#ouvrage-de-référence-principal",
+    "title": "Annexe A — Bibliographie",
+    "section": "",
+    "text": "L’ouvrage de référence à partir duquel ce livre a été construit. Alliant rigueur mathématique et accessibilité, il couvre l’ensemble de la théorie des graphes dans un style pédagogique exemplaire. C’est à partir de ses problèmes et démonstrations que les questions ont été formulées pour le conseil de machines pensantes.",
+    "crumbs": [
+      "Annexes",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Bibliographie</span>"
+    ]
+  },
+  {
+    "objectID": "10_bibliographie.html#sources-primaires-historiques",
+    "href": "10_bibliographie.html#sources-primaires-historiques",
+    "title": "Annexe A — Bibliographie",
+    "section": "A.2 Sources primaires historiques",
+    "text": "A.2 Sources primaires historiques\n\nL’article fondateur d’Euler\n[E1] Euler, L. (1736). Solutio problematis ad geometriam situs pertinentis [Solution d’un problème relevant de la géométrie de position]. Commentarii Academiae Scientiarum Petropolitanae, 8, 128-140.\n\nL’article fondateur de la théorie des graphes. Euler y démontre l’impossibilité de traverser les sept ponts de Königsberg en ne passant qu’une fois par chacun, inventant au passage le concept de graphe.\n\n\n\nLe théorème des quatre couleurs\n[AH] Appel, K., & Haken, W. (1977). Every planar map is four colorable. Part I: Discharging. Illinois Journal of Mathematics, 21(3), 429-490.\n\nLa première démonstration du théorème des quatre couleurs, célèbre pour être la première preuve mathématique majeure assistée par ordinateur.\n\n[RSST] Robertson, N., Sanders, D. P., Seymour, P. D., & Thomas, R. (1997). The four-colour theorem. Journal of Combinatorial Theory, Series B, 70(1), 2-44. DOI: 10.1006/jctb.1997.1750\n\nSimplification et vérification indépendante de la preuve du théorème des quatre couleurs.",
+    "crumbs": [
+      "Annexes",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Bibliographie</span>"
+    ]
+  },
+  {
+    "objectID": "10_bibliographie.html#manuels-et-introductions",
+    "href": "10_bibliographie.html#manuels-et-introductions",
+    "title": "Annexe A — Bibliographie",
+    "section": "A.3 Manuels et introductions",
+    "text": "A.3 Manuels et introductions\n[BM] Bondy, J. A., & Murty, U. S. R. (2008). Graph Theory. Graduate Texts in Mathematics, 244. Springer. DOI: 10.1007/978-1-84628-970-5\n\nManuel de référence international en théorie des graphes, couvrant les fondements et les développements modernes.\n\n[Di] Diestel, R. (2017). Graph Theory (5e éd.). Graduate Texts in Mathematics, 173. Springer. DOI: 10.1007/978-3-662-53622-3\n\nIntroduction rigoureuse et moderne, disponible gratuitement en ligne. Particulièrement recommandé pour les lecteurs souhaitant approfondir.\n\n[W1] West, D. B. (2001). Introduction to Graph Theory (2e éd.). Prentice Hall.\n\nManuel classique d’introduction, riche en exercices et exemples.",
+    "crumbs": [
+      "Annexes",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Bibliographie</span>"
+    ]
+  },
+  {
+    "objectID": "10_bibliographie.html#algorithmique-des-graphes",
+    "href": "10_bibliographie.html#algorithmique-des-graphes",
+    "title": "Annexe A — Bibliographie",
+    "section": "A.4 Algorithmique des graphes",
+    "text": "A.4 Algorithmique des graphes\n[Dij] Dijkstra, E. W. (1959). A note on two problems in connexion with graphs. Numerische Mathematik, 1, 269-271. DOI: 10.1007/BF01386390\n\nL’article de deux pages qui introduit l’algorithme des plus courts chemins, l’un des algorithmes les plus utilisés en informatique.\n\n[FF] Ford, L. R., & Fulkerson, D. R. (1956). Maximal flow through a network. Canadian Journal of Mathematics, 8, 399-404. DOI: 10.4153/CJM-1956-045-5\n\nL’article fondateur sur le problème du flot maximal, introduisant le théorème flot-max/coupe-min.\n\n[Kr] Kruskal, J. B. (1956). On the shortest spanning subtree of a graph and the traveling salesman problem. Proceedings of the American Mathematical Society, 7(1), 48-50.\n\nL’algorithme de Kruskal pour l’arbre couvrant de poids minimal.\n\n[Pr] Prim, R. C. (1957). Shortest connection networks and some generalizations. Bell System Technical Journal, 36(6), 1389-1401.\n\nL’algorithme de Prim, alternative à Kruskal pour les arbres couvrants minimaux.",
+    "crumbs": [
+      "Annexes",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Bibliographie</span>"
+    ]
+  },
+  {
+    "objectID": "10_bibliographie.html#graphes-planaires-et-topologie",
+    "href": "10_bibliographie.html#graphes-planaires-et-topologie",
+    "title": "Annexe A — Bibliographie",
+    "section": "A.5 Graphes planaires et topologie",
+    "text": "A.5 Graphes planaires et topologie\n[Ku] Kuratowski, K. (1930). Sur le problème des courbes gauches en topologie. Fundamenta Mathematicae, 15, 271-283.\n\nLe théorème de Kuratowski : un graphe est planaire si et seulement s’il ne contient pas de subdivision de K₅ ou K₃,₃.",
+    "crumbs": [
+      "Annexes",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Bibliographie</span>"
+    ]
+  },
+  {
+    "objectID": "10_bibliographie.html#réseaux-du-monde-réel",
+    "href": "10_bibliographie.html#réseaux-du-monde-réel",
+    "title": "Annexe A — Bibliographie",
+    "section": "A.6 Réseaux du monde réel",
+    "text": "A.6 Réseaux du monde réel\n[WS] Watts, D. J., & Strogatz, S. H. (1998). Collective dynamics of ‘small-world’ networks. Nature, 393, 440-442. DOI: 10.1038/30918\n\nL’article fondateur sur les réseaux petit-monde, montrant que la plupart des réseaux réels ont un faible diamètre.\n\n[BA] Barabási, A.-L., & Albert, R. (1999). Emergence of scaling in random networks. Science, 286(5439), 509-512. DOI: 10.1126/science.286.5439.509\n\nL’article fondateur sur les réseaux sans échelle et l’attachement préférentiel.\n\n[Ne] Newman, M. E. J. (2003). The structure and function of complex networks. SIAM Review, 45(2), 167-256. DOI: 10.1137/S003614450342480\n\nPanorama complet des réseaux complexes : structure, propriétés, et applications.",
+    "crumbs": [
+      "Annexes",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Bibliographie</span>"
+    ]
+  },
+  {
+    "objectID": "10_bibliographie.html#complexité-et-problèmes-ouverts",
+    "href": "10_bibliographie.html#complexité-et-problèmes-ouverts",
+    "title": "Annexe A — Bibliographie",
+    "section": "A.7 Complexité et problèmes ouverts",
+    "text": "A.7 Complexité et problèmes ouverts\n[Ka] Karp, R. M. (1972). Reducibility among combinatorial problems. In R. E. Miller & J. W. Thatcher (Eds.), Complexity of Computer Computations (pp. 85-103). Plenum Press.\n\nL’article fondateur identifiant 21 problèmes NP-complets, dont plusieurs issus de la théorie des graphes (coloration, cycle hamiltonien, clique).\n\n[GJ] Garey, M. R., & Johnson, D. S. (1979). Computers and Intractability: A Guide to the Theory of NP-Completeness. W. H. Freeman.\n\nLa bible de la NP-complétude, référence incontournable pour comprendre les limites algorithmiques de la théorie des graphes.",
+    "crumbs": [
+      "Annexes",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Bibliographie</span>"
+    ]
+  },
+  {
+    "objectID": "10_bibliographie.html#vulgarisation-et-histoire",
+    "href": "10_bibliographie.html#vulgarisation-et-histoire",
+    "title": "Annexe A — Bibliographie",
+    "section": "A.8 Vulgarisation et histoire",
+    "text": "A.8 Vulgarisation et histoire\n[Ga] Gardner, M. (1957-1986). Mathematical Games (colonne mensuelle). Scientific American.\n\nMartin Gardner a popularisé de nombreux problèmes de théorie des graphes, dont le problème des poignées de main (chapitre 1) et les puzzles de coloration.\n\n[BLW] Biggs, N. L., Lloyd, E. K., & Wilson, R. J. (1986). Graph Theory 1736-1936. Oxford University Press.\n\nHistoire de la théorie des graphes depuis Euler, avec les textes originaux commentés.",
+    "crumbs": [
+      "Annexes",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Bibliographie</span>"
+    ]
+  },
+  {
+    "objectID": "10_bibliographie.html#notes-sur-les-sources",
+    "href": "10_bibliographie.html#notes-sur-les-sources",
+    "title": "Annexe A — Bibliographie",
+    "section": "A.9 Notes sur les sources",
+    "text": "A.9 Notes sur les sources\nLes références marquées d’un DOI peuvent être consultées en ligne. Pour une introduction accessible à la théorie des graphes, nous recommandons particulièrement :\n\n[CS] Cogis & Schwartz pour une approche rigoureuse et pédagogique en français\n[Di] Diestel pour un traitement moderne et complet (disponible gratuitement)\n[Ga] Gardner pour le plaisir des énigmes et la culture mathématique\n\n\nBibliographie compilée à partir de recherches académiques (février 2026)",
+    "crumbs": [
+      "Annexes",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Bibliographie</span>"
+    ]
+  }
+]

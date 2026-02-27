@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Prouver qu’on ne se contredit pas – L'inaccessible théorème de Gödel ?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./4_chapitre4.html" rel="next">
+<link href="./2_chapitre2.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Aucun résultat",
+    "search-matching-documents-text": "documents correspondants",
+    "search-copy-link-title": "Copier le lien",
+    "search-hide-matches-text": "Masquer les résultats",
+    "search-more-match-text": "résultat supplémentaire",
+    "search-more-matches-text": "résultats supplémentaires",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3_chapitre3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prouver qu’on ne se contredit pas</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">L’inaccessible théorème de Gödel ?</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Préface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1_chapitre1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Le langage des nombres</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2_chapitre2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Le rêve de la machine parfaite</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_chapitre3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prouver qu’on ne se contredit pas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4_chapitre4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La phrase qui parle d’elle-même</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5_chapitre5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Le système qui ne peut pas se juger</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6_chapitre6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Les ondes de choc</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7_chapitre7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">L’art de parler de soi</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./8_chapitre8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dans les entrailles de la formule</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./9_chapitre9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ce que les machines ne sauront jamais</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_bibliographie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Bibliographie</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#le-problème-du-menteur" id="toc-le-problème-du-menteur" class="nav-link active" data-scroll-target="#le-problème-du-menteur"><span class="header-section-number">3.1</span> Le problème du menteur</a></li>
+  <li><a href="#la-méthode-du-modèle" id="toc-la-méthode-du-modèle" class="nav-link" data-scroll-target="#la-méthode-du-modèle"><span class="header-section-number">3.2</span> La méthode du modèle</a></li>
+  <li><a href="#un-exemple-pour-comprendre" id="toc-un-exemple-pour-comprendre" class="nav-link" data-scroll-target="#un-exemple-pour-comprendre"><span class="header-section-number">3.3</span> Un exemple pour comprendre</a></li>
+  <li><a href="#le-triangle-salvateur" id="toc-le-triangle-salvateur" class="nav-link" data-scroll-target="#le-triangle-salvateur"><span class="header-section-number">3.4</span> Le triangle salvateur</a></li>
+  <li><a href="#ce-que-le-système-impose" id="toc-ce-que-le-système-impose" class="nav-link" data-scroll-target="#ce-que-le-système-impose"><span class="header-section-number">3.5</span> Ce que le système impose</a></li>
+  <li><a href="#la-leçon-du-triangle" id="toc-la-leçon-du-triangle" class="nav-link" data-scroll-target="#la-leçon-du-triangle"><span class="header-section-number">3.6</span> La leçon du triangle</a></li>
+  <li><a href="#quand-la-contradiction-impose-une-vérité" id="toc-quand-la-contradiction-impose-une-vérité" class="nav-link" data-scroll-target="#quand-la-contradiction-impose-une-vérité"><span class="header-section-number">3.7</span> Quand la contradiction impose une vérité</a></li>
+  <li><a href="#la-preuve-deuclide" id="toc-la-preuve-deuclide" class="nav-link" data-scroll-target="#la-preuve-deuclide"><span class="header-section-number">3.8</span> La preuve d’Euclide</a></li>
+  <li><a href="#le-piège-se-referme" id="toc-le-piège-se-referme" class="nav-link" data-scroll-target="#le-piège-se-referme"><span class="header-section-number">3.9</span> Le piège se referme</a></li>
+  <li><a href="#les-deux-cas-impossibles" id="toc-les-deux-cas-impossibles" class="nav-link" data-scroll-target="#les-deux-cas-impossibles"><span class="header-section-number">3.10</span> Les deux cas impossibles</a></li>
+  <li><a href="#ce-queuclide-nous-enseigne" id="toc-ce-queuclide-nous-enseigne" class="nav-link" data-scroll-target="#ce-queuclide-nous-enseigne"><span class="header-section-number">3.11</span> Ce qu’Euclide nous enseigne</a></li>
+  <li><a href="#le-problème-de-larithmétique" id="toc-le-problème-de-larithmétique" class="nav-link" data-scroll-target="#le-problème-de-larithmétique"><span class="header-section-number">3.12</span> Le problème de l’arithmétique</a></li>
+  <li><a href="#ce-que-nous-avons-appris" id="toc-ce-que-nous-avons-appris" class="nav-link" data-scroll-target="#ce-que-nous-avons-appris"><span class="header-section-number">3.13</span> Ce que nous avons appris</a></li>
+  <li><a href="#vers-lincomplétude" id="toc-vers-lincomplétude" class="nav-link" data-scroll-target="#vers-lincomplétude"><span class="header-section-number">3.14</span> Vers l’incomplétude</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prouver qu’on ne se contredit pas</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="le-problème-du-menteur" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="le-problème-du-menteur"><span class="header-section-number">3.1</span> Le problème du menteur</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Analogie : Le serment du menteur
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imaginez qu’on vous demande de certifier que vous n’avez jamais menti.</p>
+<p>Vous pourriez le jurer. Vous pourriez l’écrire sur l’honneur. Vous pourriez le répéter mille fois. Mais quelle valeur aurait votre témoignage ? Si vous étiez vraiment un menteur, vous mentiriez précisément sur ce point.</p>
+<p>L’auto-certification est un piège : celui qui doit prouver sa fiabilité est précisément celui dont la fiabilité est en question.</p>
+</div>
+</div>
+<p>Ce paradoxe, les logiciens le connaissent bien. Et il se pose avec une acuité particulière quand il s’agit de prouver qu’un système formel est <strong>cohérent</strong> — c’est-à-dire qu’il ne peut jamais produire de contradiction.</p>
+<p>Comment un système peut-il certifier sa propre fiabilité ? C’est la question que Hilbert voulait résoudre — et que Gödel montrera être insoluble.</p>
+<hr>
+</section>
+<section id="la-méthode-du-modèle" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="la-méthode-du-modèle"><span class="header-section-number">3.2</span> La méthode du modèle</h2>
+<p>Heureusement, il existe une astuce.</p>
+<p>Plutôt que de demander au système de se juger lui-même, on construit un <strong>modèle</strong> : un exemple concret, un “petit monde” où toutes les règles du système sont satisfaites.</p>
+<p>Le raisonnement est simple. Si un tel monde existe — si les règles peuvent cohabiter quelque part sans se contredire — alors les règles elles-mêmes ne sont pas contradictoires. On a trouvé un témoin de leur compatibilité.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Précaution</span>Analogie : Le plan d’architecte
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pour prouver qu’un plan d’architecte ne contient pas d’erreurs géométriques, vous pourriez construire effectivement le bâtiment. Si le bâtiment tient debout, le plan était cohérent.</p>
+<p>C’est exactement ce que fait la méthode du modèle : construire un “bâtiment” qui satisfait toutes les règles du système. Son existence prouve qu’aucune contradiction n’était cachée dans les plans.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="un-exemple-pour-comprendre" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="un-exemple-pour-comprendre"><span class="header-section-number">3.3</span> Un exemple pour comprendre</h2>
+<p>Prenons un système très simple — un jeu abstrait avec deux types d’objets.</p>
+<p>Appelons-les <strong>points</strong> (a, b, c…) et <strong>boîtes</strong> (L₁, L₂, L₃…). Et fixons cinq règles :</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Règle</th>
+<th>Ce qu’elle dit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td>Deux points sont toujours ensemble dans au moins une boîte</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>Un point n’appartient pas à plus de deux boîtes</td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td>Aucune boîte ne contient tous les points</td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td>Deux boîtes ont exactement un point en commun</td>
+</tr>
+<tr class="odd">
+<td><strong>5</strong></td>
+<td>Une boîte ne contient pas plus de deux points</td>
+</tr>
+</tbody>
+</table>
+<p>Ces règles sont-elles compatibles ? Peut-on imaginer un monde où elles sont toutes vraies en même temps ?</p>
+<hr>
+</section>
+<section id="le-triangle-salvateur" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="le-triangle-salvateur"><span class="header-section-number">3.4</span> Le triangle salvateur</h2>
+<p>Essayons avec trois points et trois boîtes.</p>
+<pre><code>        a
+       / \
+      /   \
+     b─────c</code></pre>
+<p>Posons : - L₁ contient a et b - L₂ contient a et c - L₃ contient b et c</p>
+<p>Vérifions chaque règle :</p>
+<p><strong>Règle 1</strong> — Chaque paire de points a sa boîte. (a,b) → L₁. (a,c) → L₂. (b,c) → L₃. ✓</p>
+<p><strong>Règle 2</strong> — Chaque point est dans exactement deux boîtes, pas plus. ✓</p>
+<p><strong>Règle 3</strong> — Aucune boîte ne contient les trois points. ✓</p>
+<p><strong>Règle 4</strong> — Chaque paire de boîtes partage un point. L₁ et L₂ partagent a. L₁ et L₃ partagent b. L₂ et L₃ partagent c.&nbsp;✓</p>
+<p><strong>Règle 5</strong> — Chaque boîte contient exactement deux points. ✓</p>
+<p>Le triangle satisfait toutes les règles. Nous avons notre modèle. Le système est <strong>cohérent</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ch3_01_triangle_modele.png" class="img-fluid figure-img" width="450"></p>
+<figcaption>Le triangle salvateur : un modèle qui prouve la cohérence</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="ce-que-le-système-impose" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="ce-que-le-système-impose"><span class="header-section-number">3.5</span> Ce que le système impose</h2>
+<p>Remarquez quelque chose d’intéressant : nous n’avons pas <em>choisi</em> d’avoir trois points. Le système nous l’a <em>imposé</em>.</p>
+<p>Essayez d’ajouter un quatrième point, appelons-le d.</p>
+<p>La règle 1 exige que (a,d) soit dans une boîte. Mais a est déjà dans L₁ et L₂ — deux boîtes. La règle 2 interdit qu’il soit dans une troisième.</p>
+<p>Contradiction. Un quatrième point est impossible.</p>
+<p>Essayez de n’avoir que deux points.</p>
+<p>La règle 1 exige qu’ils soient dans une boîte commune. Mais alors cette unique boîte contiendrait tous les points, ce qui viole la règle 3.</p>
+<p>Contradiction. Moins de trois points est impossible.</p>
+<p>Le système détermine lui-même ses propres limites. Trois points — exactement trois — c’est tout ce qu’il peut contenir.</p>
+<hr>
+</section>
+<section id="la-leçon-du-triangle" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="la-leçon-du-triangle"><span class="header-section-number">3.6</span> La leçon du triangle</h2>
+<p>Que nous apprend cet exercice ?</p>
+<p><strong>Premièrement</strong>, qu’un modèle suffit à prouver la cohérence. Nous n’avons pas besoin de vérifier toutes les déductions possibles — un seul exemple où les règles coexistent suffit.</p>
+<p><strong>Deuxièmement</strong>, que les règles contraignent ce qui est possible. Ce n’est pas l’architecte qui décide de la forme du bâtiment — ce sont les contraintes géométriques.</p>
+<p><strong>Troisièmement</strong>, que cette méthode est puissante mais limitée. Elle fonctionne tant qu’on peut effectivement construire le modèle.</p>
+<hr>
+</section>
+<section id="quand-la-contradiction-impose-une-vérité" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="quand-la-contradiction-impose-une-vérité"><span class="header-section-number">3.7</span> Quand la contradiction impose une vérité</h2>
+<p>Mais la contradiction ne sert pas seulement à vérifier la cohérence. Elle peut aussi <em>forcer</em> des conclusions — imposer des vérités que personne n’avait anticipées.</p>
+<p>L’exemple le plus célèbre remonte à Euclide, trois siècles avant notre ère. Il voulait prouver qu’il existe une infinité de nombres premiers. Sa méthode ? Supposer le contraire et montrer que cette hypothèse s’effondre.</p>
+<hr>
+</section>
+<section id="la-preuve-deuclide" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="la-preuve-deuclide"><span class="header-section-number">3.8</span> La preuve d’Euclide</h2>
+<p>Imaginons qu’il existe un plus grand nombre premier. Appelons-le x.</p>
+<p>Nous avons alors une boîte finie contenant tous les nombres premiers : 2, 3, 5, 7, 11, …, x. C’est notre hypothèse de départ.</p>
+<p>Euclide construit maintenant un nombre particulier. Il prend tous les nombres premiers de la boîte, les multiplie entre eux, puis ajoute 1 :</p>
+<blockquote class="blockquote">
+<p>y = (2 × 3 × 5 × 7 × … × x) + 1</p>
+</blockquote>
+<p>Prenons un exemple concret. Si le plus grand nombre premier était 5, alors :</p>
+<blockquote class="blockquote">
+<p>y = (2 × 3 × 5) + 1 = 30 + 1 = 31</p>
+</blockquote>
+<p>Que peut-on dire de ce nombre y ?</p>
+<hr>
+</section>
+<section id="le-piège-se-referme" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="le-piège-se-referme"><span class="header-section-number">3.9</span> Le piège se referme</h2>
+<p>Essayons de diviser y par l’un des nombres premiers de la boîte.</p>
+<p>Divisons 31 par 2 : le reste est 1. Divisons 31 par 3 : le reste est 1. Divisons 31 par 5 : le reste est 1.</p>
+<p>Pourquoi ce reste de 1 à chaque fois ? Parce que y est construit comme “un multiple de tous ces nombres, plus 1”. Le produit 2 × 3 × 5 = 30 est divisible par 2, par 3, et par 5. Mais 30 + 1 = 31 donne toujours un reste de 1.</p>
+<p>Donc y n’est divisible par <em>aucun</em> des nombres premiers de notre boîte.</p>
+<hr>
+</section>
+<section id="les-deux-cas-impossibles" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="les-deux-cas-impossibles"><span class="header-section-number">3.10</span> Les deux cas impossibles</h2>
+<p>Deux possibilités se présentent alors.</p>
+<p><strong>Premier cas : y est lui-même premier.</strong></p>
+<p>Alors nous avons trouvé un nombre premier plus grand que x — puisque y est plus grand que le produit de tous les premiers, et donc certainement plus grand que x.</p>
+<p>Contradiction : x n’était pas le plus grand.</p>
+<p><strong>Second cas : y n’est pas premier.</strong></p>
+<p>Alors y est composé — il peut être décomposé en facteurs premiers. Appelons z l’un de ces facteurs.</p>
+<p>Mais z peut-il être l’un des nombres de notre boîte ? Non. Nous venons de voir qu’aucun d’eux ne divise y.</p>
+<p>Donc z est un nombre premier qui n’est pas dans la boîte. Or, la boîte était censée contenir <em>tous</em> les nombres premiers jusqu’à x. Si z n’y figure pas, c’est que z &gt; x.</p>
+<p>Contradiction : nous avons trouvé un nombre premier plus grand que le supposé “plus grand”.</p>
+<hr>
+</section>
+<section id="ce-queuclide-nous-enseigne" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="ce-queuclide-nous-enseigne"><span class="header-section-number">3.11</span> Ce qu’Euclide nous enseigne</h2>
+<p>Dans les deux cas, l’hypothèse de départ — “il existe un plus grand nombre premier” — conduit à une contradiction. Donc cette hypothèse est fausse. Il n’y a pas de plus grand nombre premier : ils sont infinis.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Attention</span>Leçon méthodologique : La puissance de la contradiction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Euclide n’a pas eu besoin de <em>construire</em> une infinité de nombres premiers. Il lui a suffi de montrer que l’hypothèse contraire était intenable.</p>
+<p>C’est exactement ce que fera Gödel, deux millénaires plus tard. Lui aussi partira d’une hypothèse — “le système est complet” — et montrera qu’elle mène à une impasse.</p>
+<p>La contradiction, bien maîtrisée, devient un outil pour <em>imposer</em> des vérités que le système lui-même ne peut pas démontrer directement. Ce qui semblait détruire peut aussi révéler.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ch3_02_nombres_premiers.png" class="img-fluid figure-img" width="450"></p>
+<figcaption>L’infinité des nombres premiers, révélée par la contradiction</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="le-problème-de-larithmétique" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="le-problème-de-larithmétique"><span class="header-section-number">3.12</span> Le problème de l’arithmétique</h2>
+<p>Pour notre petit système à cinq règles, construire un modèle était facile. Trois points, trois segments, un dessin sur une serviette de café.</p>
+<p>Mais pour l’arithmétique ?</p>
+<p>L’arithmétique parle de nombres — d’une infinité de nombres. Son modèle serait l’ensemble des entiers naturels lui-même, avec toutes leurs propriétés. Comment construire l’infini ?</p>
+<p>On peut essayer de le décrire, bien sûr. Mais cette description serait elle-même un système formel. Et ce système aurait besoin de sa propre preuve de cohérence. On entrerait dans une régression sans fin — un problème que nous retrouverons, sous une forme encore plus aiguë, avec le second théorème de Gödel.</p>
+<p>C’est le piège dans lequel Hilbert s’est trouvé. Il voulait prouver la cohérence de l’arithmétique <em>depuis l’intérieur</em> — en utilisant seulement les ressources de l’arithmétique elle-même. Une auto-certification, en quelque sorte.</p>
+<p>Gödel va montrer que c’est impossible.</p>
+<hr>
+</section>
+<section id="ce-que-nous-avons-appris" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="ce-que-nous-avons-appris"><span class="header-section-number">3.13</span> Ce que nous avons appris</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Ce qu’il faut retenir</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Cohérence</strong></td>
+<td>Un système est cohérent s’il ne peut pas prouver une contradiction</td>
+</tr>
+<tr class="even">
+<td><strong>Modèle</strong></td>
+<td>Un “monde” où toutes les règles sont vraies — le triangle en est un exemple</td>
+</tr>
+<tr class="odd">
+<td><strong>Preuve par modèle</strong></td>
+<td>Si un modèle existe, le système est cohérent</td>
+</tr>
+<tr class="even">
+<td><strong>Preuve par contradiction</strong></td>
+<td>Supposer le contraire et montrer que cela mène à l’absurde — la méthode d’Euclide</td>
+</tr>
+<tr class="odd">
+<td><strong>Contradiction qui impose</strong></td>
+<td>La contradiction peut <em>forcer</em> des conclusions, pas seulement éviter des erreurs</td>
+</tr>
+<tr class="even">
+<td><strong>Limite</strong></td>
+<td>Pour les systèmes infinis, construire un modèle devient problématique</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="vers-lincomplétude" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="vers-lincomplétude"><span class="header-section-number">3.14</span> Vers l’incomplétude</h2>
+<p>Nous avons vu comment prouver qu’un petit système est cohérent : on construit un modèle qui satisfait toutes ses règles. Et nous avons vu, avec Euclide, comment la contradiction elle-même peut imposer des vérités.</p>
+<p>Mais ces deux armes — le modèle et la contradiction — se heurtent à un mur quand le système devient trop puissant. L’arithmétique ne peut pas construire son propre modèle. Elle ne peut pas sortir d’elle-même pour se contempler de l’extérieur.</p>
+<p>C’est dans cette impasse que l’auto-référence va réapparaître. Non plus comme une curiosité philosophique, mais comme une arme à double tranchant.</p>
+<p>D’abord, elle va presque tout détruire. Puis, dans les mains d’un jeune Autrichien, elle va révéler des vérités que personne n’avait imaginées.</p>
+<p>Cette histoire commence par un bibliothécaire méticuleux — et une lettre de trois paragraphes qui fit vaciller les fondements des mathématiques.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./2_chapitre2.html" class="pagination-link" aria-label="Le rêve de la machine parfaite">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Le rêve de la machine parfaite</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./4_chapitre4.html" class="pagination-link" aria-label="La phrase qui parle d'elle-même">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La phrase qui parle d’elle-même</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

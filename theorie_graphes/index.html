@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Arthur Sarazin">
+
+<title>La théorie des graphes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./1_chapitre1.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Aucun résultat",
+    "search-matching-documents-text": "documents correspondants",
+    "search-copy-link-title": "Copier le lien",
+    "search-hide-matches-text": "Masquer les résultats",
+    "search-more-match-text": "résultat supplémentaire",
+    "search-more-matches-text": "résultats supplémentaires",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Préface</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">La théorie des graphes</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Préface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1_chapitre1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chapitre 1 : Les poignées de main de Bourbaki</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2_chapitre2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapitre 2 : L’assemblée et les tiroirs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_chapitre3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapitre 3 : La loi universelle des degrés</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_bibliographie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Bibliographie</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#préface" id="toc-préface" class="nav-link active" data-scroll-target="#préface">Préface</a>
+  <ul class="collapse">
+  <li><a href="#des-liens-invisibles" id="toc-des-liens-invisibles" class="nav-link" data-scroll-target="#des-liens-invisibles">Des liens invisibles</a></li>
+  <li><a href="#à-qui-sadresse-ce-livre" id="toc-à-qui-sadresse-ce-livre" class="nav-link" data-scroll-target="#à-qui-sadresse-ce-livre">À qui s’adresse ce livre ?</a></li>
+  <li><a href="#ce-que-vous-allez-découvrir" id="toc-ce-que-vous-allez-découvrir" class="nav-link" data-scroll-target="#ce-que-vous-allez-découvrir">Ce que vous allez découvrir</a></li>
+  <li><a href="#le-plan-de-ce-livre" id="toc-le-plan-de-ce-livre" class="nav-link" data-scroll-target="#le-plan-de-ce-livre">Le plan de ce livre</a></li>
+  <li><a href="#un-mot-sur-la-rigueur" id="toc-un-mot-sur-la-rigueur" class="nav-link" data-scroll-target="#un-mot-sur-la-rigueur">Un mot sur la rigueur</a></li>
+  <li><a href="#pourquoi-les-graphes-comptent" id="toc-pourquoi-les-graphes-comptent" class="nav-link" data-scroll-target="#pourquoi-les-graphes-comptent">Pourquoi les graphes comptent</a></li>
+  <li><a href="#une-invitation" id="toc-une-invitation" class="nav-link" data-scroll-target="#une-invitation">Une invitation</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">La théorie des graphes</h1>
+<p class="subtitle lead">Une exploration accessible pour les non-spécialistes</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur</div>
+    <div class="quarto-title-meta-contents">
+             <p>Arthur Sarazin </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">27 février 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="préface" class="level1 unnumbered">
+<h1 class="unnumbered">Préface</h1>
+<section id="des-liens-invisibles" class="level2">
+<h2 class="anchored" data-anchor-id="des-liens-invisibles">Des liens invisibles</h2>
+<p>Regardez autour de vous.</p>
+<p>Votre réseau d’amis, les routes qui relient les villes de votre pays, les câbles sous-marins qui transportent vos messages d’un continent à l’autre, les réactions chimiques dans vos cellules, les pages web reliées par des hyperliens — tous ces systèmes, en apparence si différents, partagent une structure commune. Des <strong>points</strong> reliés par des <strong>liens</strong>.</p>
+<p>Les mathématiciens appellent cette structure un <strong>graphe</strong>. Et depuis près de trois siècles, ils développent une théorie pour comprendre ses propriétés — une théorie d’une élégance remarquable, née d’une promenade dominicale dans une ville prussienne et d’une question apparemment anodine sur des ponts.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>L’essentiel à retenir
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La théorie des graphes est l’art de penser les relations. Partout où il y a des objets connectés — personnes, villes, molécules, idées — il y a un graphe. Et partout où il y a un graphe, il y a des propriétés cachées qui attendent d’être découvertes.</p>
+</div>
+</div>
+<p>Ce livre raconte cette théorie, ses idées fondatrices, et leurs implications profondes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/preface_01_reseau_graphe.webp" class="img-fluid figure-img" width="450"></p>
+<figcaption>Des liens invisibles relient tout : personnes, villes, idées</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="à-qui-sadresse-ce-livre" class="level2">
+<h2 class="anchored" data-anchor-id="à-qui-sadresse-ce-livre">À qui s’adresse ce livre ?</h2>
+<p>Vous n’avez pas besoin d’être mathématicien pour comprendre la théorie des graphes. Si vous savez dessiner des points et tracer des traits entre eux, vous avez tout le bagage nécessaire.</p>
+<p>Ce livre est écrit pour :</p>
+<ul>
+<li>Le curieux qui a entendu parler des « réseaux » sans jamais vraiment comprendre la mathématique sous-jacente</li>
+<li>Le gestionnaire qui veut optimiser des flux, des plannings ou des itinéraires</li>
+<li>L’informaticien qui utilise des graphes au quotidien sans en connaître les fondements théoriques</li>
+<li>Le philosophe amateur fasciné par les structures qui relient les choses entre elles</li>
+<li>Quiconque aime les problèmes qui se résolvent avec un crayon et du papier</li>
+</ul>
+<hr>
+</section>
+<section id="ce-que-vous-allez-découvrir" class="level2">
+<h2 class="anchored" data-anchor-id="ce-que-vous-allez-découvrir">Ce que vous allez découvrir</h2>
+<p>Imaginez une soirée mondaine. Des couples arrivent, se serrent la main selon des règles précises. À la fin de la soirée, vous interrogez chaque personne : « Combien de mains avez-vous serrées ? » Les réponses sont toutes différentes — et pourtant, il est possible de déduire exactement combien de mains <em>vous-même</em> avez serrées.</p>
+<p>Ce petit miracle logique — le problème des poignées de main de Bourbaki — est notre porte d’entrée dans la théorie des graphes. Et il illustre une vérité profonde : les contraintes locales (qui serre la main de qui) déterminent des propriétés globales (la structure entière du réseau).</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Attention</span>Les grandes idées de ce livre
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>De la soirée mondaine aux algorithmes qui gouvernent Internet, nous traverserons :</p>
+<ol type="1">
+<li><strong>Les séquences de degrés</strong> — pourquoi les contraintes locales déterminent la structure globale</li>
+<li><strong>Les chemins et les cycles</strong> — comment naviguer dans un réseau, d’Euler à Dijkstra</li>
+<li><strong>Les arbres</strong> — ces graphes minimaux qui sont partout, du câblage électrique à l’évolution</li>
+<li><strong>La coloration</strong> — l’art de répartir des ressources sans conflit</li>
+<li><strong>Les flots</strong> — comment maximiser ce qui traverse un réseau</li>
+</ol>
+<p>Chaque chapitre part d’un problème concret et en déploie la théorie.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="le-plan-de-ce-livre" class="level2">
+<h2 class="anchored" data-anchor-id="le-plan-de-ce-livre">Le plan de ce livre</h2>
+<p>Nous progresserons par étapes, sans jamais présupposer de connaissances techniques.</p>
+<p><strong>Le chapitre 1</strong> ouvre le bal avec une énigme de soirée mondaine : le problème des poignées de main de Bourbaki. Comment prouver par récurrence que chaque membre du couple hôte serre exactement <em>n</em> mains quand <em>n</em> couples sont invités ? Ce premier chapitre introduit la notion de degré d’un sommet et la puissance du raisonnement par récurrence.</p>
+<p><strong>Le chapitre 2</strong> approfondit la notion de degré avec une question déstabilisante : dans une assemblée de <em>n</em> personnes, peut-il arriver que tout le monde connaisse un nombre différent de personnes ? La réponse — non, jamais — s’obtient grâce au principe des tiroirs, l’un des outils les plus simples et les plus puissants de la combinatoire.</p>
+<p><strong>Le chapitre 3</strong> révèle une loi universelle : dans tout graphe, la somme des degrés vaut exactement le double du nombre d’arêtes. Ce résultat, qui ne fait aucune exception, repose sur un argument de double comptage d’une simplicité désarmante — et son corollaire sur la parité des degrés sera la clé du chapitre suivant.</p>
+<p><strong>Le chapitre 4</strong> pose la question de la coloration : comment colorier une carte pour que deux pays voisins n’aient jamais la même couleur ? Le célèbre théorème des quatre couleurs et ses implications.</p>
+<p><strong>Le chapitre 5</strong> cherche les chemins les plus courts. L’algorithme de Dijkstra, les graphes pondérés, et les applications omniprésentes — de Google Maps aux réseaux de télécommunications.</p>
+<p><strong>Le chapitre 6</strong> étudie les flots dans les réseaux : comment maximiser le débit d’un réseau de transport ? Le théorème flot-max/coupe-min, l’une des plus belles dualités de la théorie.</p>
+<p><strong>Le chapitre 7</strong> s’intéresse aux graphes planaires — ceux qu’on peut dessiner sans croisement. La formule d’Euler, le théorème de Kuratowski, et l’art de la topologie combinatoire.</p>
+<p><strong>Le chapitre 8</strong> fait le pont vers le monde réel : réseaux sociaux, réseaux petit-monde, graphes sans échelle. Comment la théorie des graphes éclaire la structure cachée d’Internet, du cerveau et des sociétés.</p>
+<p><strong>Le chapitre 9</strong> clôt le voyage en explorant les limites : problèmes NP-complets, isomorphisme de graphes, et les questions ouvertes qui occupent encore les chercheurs. La théorie des graphes est vivante — et ses frontières reculent chaque année.</p>
+<hr>
+</section>
+<section id="un-mot-sur-la-rigueur" class="level2">
+<h2 class="anchored" data-anchor-id="un-mot-sur-la-rigueur">Un mot sur la rigueur</h2>
+<p>Ce livre fait un choix assumé : la clarté plutôt que l’exhaustivité.</p>
+<p>Les démonstrations de la théorie des graphes peuvent être d’une grande technicité. Nous privilégierons l’intuition et les exemples concrets, en indiquant toujours les pistes pour aller plus loin.</p>
+<p>Notre guide principal est l’excellent ouvrage d’Olivier Cogis et Claudine Schwartz, <em>La théorie des graphes</em> <strong>[CS]</strong>, dans la collection L chez Cassini. Ce livre de référence allie rigueur mathématique et accessibilité, et c’est à partir de ses problèmes et de ses démonstrations que nous avons formulé les questions soumises à notre conseil de machines pensantes.</p>
+<hr>
+</section>
+<section id="pourquoi-les-graphes-comptent" class="level2">
+<h2 class="anchored" data-anchor-id="pourquoi-les-graphes-comptent">Pourquoi les graphes comptent</h2>
+<p>On pourrait croire que la théorie des graphes est une curiosité de mathématicien, un jeu de points et de traits sur du papier. Ce serait une erreur.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Précaution</span>Trois leçons pour notre monde
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La théorie des graphes nous enseigne que :</p>
+<ul>
+<li><strong>La structure détermine le comportement</strong> — comprendre les connexions, c’est comprendre le système</li>
+<li><strong>Le local contraint le global</strong> — les propriétés de chaque nœud déterminent les propriétés du réseau entier</li>
+<li><strong>La simplicité cache la profondeur</strong> — des points et des traits suffisent à modéliser une complexité vertigineuse</li>
+</ul>
+<p>Dans un monde de réseaux — sociaux, informatiques, biologiques, économiques — cette théorie n’a jamais été aussi indispensable.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="une-invitation" class="level2">
+<h2 class="anchored" data-anchor-id="une-invitation">Une invitation</h2>
+<p>La théorie des graphes n’a pas fini de nous surprendre. Chaque décennie apporte de nouveaux problèmes, de nouvelles connexions avec d’autres domaines, de nouvelles applications.</p>
+<p>Ce livre est une invitation à découvrir cette mathématique vivante — à travers des problèmes qui se comprennent en cinq minutes et dont les solutions éclairent le monde.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/preface_02_euler_konigsberg.webp" class="img-fluid figure-img" width="450"></p>
+<figcaption>Les ponts de Königsberg, berceau de la théorie des graphes</figcaption>
+</figure>
+</div>
+<hr>
+<p>Mais avant de traverser ces ponts, il faut d’abord assister à une soirée mondaine. Les Bourbaki reçoivent ce soir. Chaque couple invité serre des mains — et de cette simple contrainte va naître un résultat étonnant. Commençons par le commencement : une question de poignées de main, et la notion de degré qui va tout éclairer.</p>
+<hr>
+<blockquote class="blockquote">
+<p><strong>Note sur les références</strong> : Les citations entre crochets <strong>[CS]</strong>, <strong>[E1]</strong>, etc., renvoient à la <a href="./10_bibliographie.html">bibliographie</a> en fin d’ouvrage, qui recense les sources primaires historiques et les travaux de référence.</p>
+</blockquote>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./1_chapitre1.html" class="pagination-link" aria-label="Chapitre 1 : Les poignées de main de Bourbaki">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chapitre 1 : Les poignées de main de Bourbaki</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

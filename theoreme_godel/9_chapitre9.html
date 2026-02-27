@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Ce que les machines ne sauront jamais – L'inaccessible théorème de Gödel ?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./10_bibliographie.html" rel="next">
+<link href="./8_chapitre8.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Aucun résultat",
+    "search-matching-documents-text": "documents correspondants",
+    "search-copy-link-title": "Copier le lien",
+    "search-hide-matches-text": "Masquer les résultats",
+    "search-more-match-text": "résultat supplémentaire",
+    "search-more-matches-text": "résultats supplémentaires",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./9_chapitre9.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ce que les machines ne sauront jamais</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">L’inaccessible théorème de Gödel ?</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Préface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1_chapitre1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Le langage des nombres</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2_chapitre2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Le rêve de la machine parfaite</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_chapitre3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prouver qu’on ne se contredit pas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4_chapitre4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La phrase qui parle d’elle-même</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5_chapitre5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Le système qui ne peut pas se juger</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6_chapitre6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Les ondes de choc</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7_chapitre7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">L’art de parler de soi</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./8_chapitre8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dans les entrailles de la formule</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./9_chapitre9.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ce que les machines ne sauront jamais</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_bibliographie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Bibliographie</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#le-rêve-du-manuel-parfait" id="toc-le-rêve-du-manuel-parfait" class="nav-link active" data-scroll-target="#le-rêve-du-manuel-parfait"><span class="header-section-number">9.1</span> Le rêve du manuel parfait</a></li>
+  <li><a href="#quatre-raisons-pour-un-échec" id="toc-quatre-raisons-pour-un-échec" class="nav-link" data-scroll-target="#quatre-raisons-pour-un-échec"><span class="header-section-number">9.2</span> Quatre raisons pour un échec</a></li>
+  <li><a href="#ce-que-gödel-nous-dit-des-machines" id="toc-ce-que-gödel-nous-dit-des-machines" class="nav-link" data-scroll-target="#ce-que-gödel-nous-dit-des-machines"><span class="header-section-number">9.3</span> Ce que Gödel nous dit des machines</a></li>
+  <li><a href="#lhumain-et-la-machine" id="toc-lhumain-et-la-machine" class="nav-link" data-scroll-target="#lhumain-et-la-machine"><span class="header-section-number">9.4</span> L’humain et la machine</a></li>
+  <li><a href="#de-nouveaux-principes-attendent" id="toc-de-nouveaux-principes-attendent" class="nav-link" data-scroll-target="#de-nouveaux-principes-attendent"><span class="header-section-number">9.5</span> De nouveaux principes attendent</a></li>
+  <li><a href="#la-métaphore-de-locéan" id="toc-la-métaphore-de-locéan" class="nav-link" data-scroll-target="#la-métaphore-de-locéan"><span class="header-section-number">9.6</span> La métaphore de l’océan</a></li>
+  <li><a href="#ce-que-cela-signifie-pour-nous" id="toc-ce-que-cela-signifie-pour-nous" class="nav-link" data-scroll-target="#ce-que-cela-signifie-pour-nous"><span class="header-section-number">9.7</span> Ce que cela signifie pour nous</a></li>
+  <li><a href="#ce-que-nous-avons-appris" id="toc-ce-que-nous-avons-appris" class="nav-link" data-scroll-target="#ce-que-nous-avons-appris"><span class="header-section-number">9.8</span> Ce que nous avons appris</a></li>
+  <li><a href="#le-mot-de-la-fin" id="toc-le-mot-de-la-fin" class="nav-link" data-scroll-target="#le-mot-de-la-fin"><span class="header-section-number">9.9</span> Le mot de la fin</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ce que les machines ne sauront jamais</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="le-rêve-du-manuel-parfait" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="le-rêve-du-manuel-parfait"><span class="header-section-number">9.1</span> Le rêve du manuel parfait</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Analogie : Le manuel de l’intelligence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imaginons un projet fou : écrire un manuel — un seul livre, aussi épais que nécessaire — qui contiendrait toutes les règles permettant de reproduire ce que fait un esprit humain.</p>
+<p>Résoudre un problème de mathématiques. Reconnaître un visage. Inventer une histoire. Apprendre une langue. Tomber amoureux d’une idée.</p>
+<p>Si un tel manuel existait, on pourrait le donner à une machine. Elle suivrait les règles, une par une, et finirait par penser comme nous. L’intelligence humaine serait alors <em>axiomatisable</em> — réductible à un ensemble fini de principes.</p>
+<p>Ce rêve a un nom : <strong>le programme mécaniste</strong>. Et Gödel nous dit pourquoi il est voué à l’échec.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="quatre-raisons-pour-un-échec" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="quatre-raisons-pour-un-échec"><span class="header-section-number">9.2</span> Quatre raisons pour un échec</h2>
+<p>Pourquoi ne peut-on pas écrire ce manuel ?</p>
+<p><strong>La complexité infinie.</strong> Le cerveau humain compte cent mille milliards de connexions. Même si l’on décrivait chaque neurone, il y aurait toujours des configurations nouvelles — des états jamais prévus par le manuel.</p>
+<p><strong>La créativité.</strong> L’intelligence ne se contente pas d’appliquer des règles connues. Elle en invente de nouvelles. Newton n’a pas <em>appliqué</em> le calcul différentiel — il l’a <em>créé</em>. Un manuel figé ne peut contenir des règles qui n’existent pas encore.</p>
+<p><strong>L’auto-référence.</strong> Nous pouvons parler de nous-mêmes, remettre en cause nos propres concepts, sortir du cadre. C’est précisément ce que fait Gödel : il construit une phrase qui parle du système lui-même.</p>
+<p><strong>Les limites logiques.</strong> Et c’est ici que le théorème d’incomplétude entre en scène. Si notre manuel est suffisamment puissant pour contenir l’arithmétique de base — et il le faudrait, pour reproduire ne serait-ce que la capacité de compter — alors il sera forcément incomplet. Il existera des vérités qu’il ne pourra pas démontrer.</p>
+<hr>
+</section>
+<section id="ce-que-gödel-nous-dit-des-machines" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="ce-que-gödel-nous-dit-des-machines"><span class="header-section-number">9.3</span> Ce que Gödel nous dit des machines</h2>
+<p>Une machine — un ordinateur, une intelligence artificielle, un programme — fonctionne exactement comme un système formel.</p>
+<p>Elle possède un code source fini : ses “axiomes”. Elle applique des règles de calcul déterministes : ses “déductions”. Elle produit des résultats : ses “théorèmes”.</p>
+<p>Gödel nous dit ceci :</p>
+<blockquote class="blockquote">
+<p>Même la machine la plus puissante, si elle est capable de simuler l’arithmétique, ne pourra jamais résoudre tous les problèmes de ce domaine.</p>
+</blockquote>
+<p>Et plus troublant encore :</p>
+<blockquote class="blockquote">
+<p>Elle ne pourra jamais prouver qu’elle ne fera jamais d’erreur — tant qu’elle est assez puissante pour faire de l’arithmétique.</p>
+</blockquote>
+<p>Ce n’est pas une question de puissance de calcul. Ce n’est pas une question de mémoire ou de vitesse. C’est une limite <em>structurelle</em>, aussi infranchissable que les murs de la cathédrale.</p>
+<hr>
+</section>
+<section id="lhumain-et-la-machine" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="lhumain-et-la-machine"><span class="header-section-number">9.4</span> L’humain et la machine</h2>
+<p>Voici le contraste que Gödel révèle <strong>[L1]</strong> :</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>La machine</th>
+<th>L’esprit humain</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Suit un ensemble fini de règles</td>
+<td>Peut créer de nouvelles règles</td>
+</tr>
+<tr class="even">
+<td>Ne peut pas sortir de son cadre</td>
+<td>Peut se regarder de l’extérieur</td>
+</tr>
+<tr class="odd">
+<td>Est soumise à l’incomplétude</td>
+<td>Reconnaît les vérités que le système ne peut prouver</td>
+</tr>
+<tr class="even">
+<td>Ne peut garantir sa propre cohérence</td>
+<td>Peut douter de lui-même — et c’est une force</td>
+</tr>
+</tbody>
+</table>
+<p>Souvenez-vous de la phrase G : “Cette formule n’est pas démontrable.”</p>
+<p>Le système ne peut pas la prouver. Mais nous, en regardant de l’extérieur, nous voyons qu’elle est vraie. Nous avons ce que le système n’a pas : un regard extérieur, une capacité de transcendance.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ch9_01_humain_vs_machine.png" class="img-fluid figure-img" width="450"></p>
+<figcaption>L’humain et la machine : deux formes d’intelligence</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="de-nouveaux-principes-attendent" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="de-nouveaux-principes-attendent"><span class="header-section-number">9.5</span> De nouveaux principes attendent</h2>
+<p>Gödel n’a pas seulement montré des limites. Il a ouvert une porte.</p>
+<p>Si l’arithmétique de base laisse des vérités orphelines, alors il faut inventer de nouvelles méthodes pour les atteindre. Et c’est exactement ce que les mathématiciens ont fait depuis 1931 :</p>
+<ul>
+<li>La logique intuitionniste, qui refuse le tiers exclu</li>
+<li>La logique modale, qui parle de ce qui est <em>possible</em> et <em>nécessaire</em></li>
+<li>La théorie des types homotopiques, qui repense les fondements</li>
+<li>Les logiques probabilistes, qui embrassent l’incertitude</li>
+</ul>
+<p>Chaque nouvelle logique est une nouvelle carte de l’océan. Elle révèle des îles que les anciennes cartes ne montraient pas.</p>
+<p>Et l’esprit humain est le navigateur qui trace ces cartes.</p>
+<hr>
+</section>
+<section id="la-métaphore-de-locéan" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="la-métaphore-de-locéan"><span class="header-section-number">9.6</span> La métaphore de l’océan</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Analogie : L’océan de la connaissance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imaginons que la connaissance soit un océan.</p>
+<ul>
+<li><p>Les <strong>axiomes</strong> sont les cartes que l’on trace : elles montrent les côtes que nous connaissons, les routes que nous avons explorées.</p></li>
+<li><p>Le <strong>théorème de Gödel</strong> nous dit qu’il y aura toujours des îles invisibles sur ces cartes — des terres que nos instruments actuels ne peuvent pas détecter, même si l’on dessine avec le plus grand soin.</p></li>
+<li><p>L’<strong>intelligence humaine</strong> est le navigateur qui, en plus de suivre la carte, sait découvrir de nouvelles îles et dessiner de nouvelles cartes. Il peut lever les yeux du parchemin et regarder l’horizon.</p></li>
+<li><p>Les <strong>machines</strong> sont les bateaux qui suivent strictement la carte. Ils voguent vite — plus vite que n’importe quel navigateur. Mais ils ne peuvent jamais explorer les terres qui n’y figurent pas.</p></li>
+</ul>
+<p><strong>La question ultime</strong> : qu’est-ce qui distingue le navigateur du bateau ?</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ch9_02_ocean_connaissance.png" class="img-fluid figure-img" width="450"></p>
+<figcaption>L’océan de la connaissance : des îles encore à découvrir</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="ce-que-cela-signifie-pour-nous" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="ce-que-cela-signifie-pour-nous"><span class="header-section-number">9.7</span> Ce que cela signifie pour nous</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Domaine</th>
+<th>Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Intelligence artificielle</strong></td>
+<td>Les modèles actuels excellent sur des tâches bien définies, mais ne pourront jamais reproduire la capacité humaine à créer de nouveaux concepts</td>
+</tr>
+<tr class="even">
+<td><strong>Philosophie de l’esprit</strong></td>
+<td>L’idée que l’esprit serait “juste un ordinateur” devient difficile à soutenir</td>
+</tr>
+<tr class="odd">
+<td><strong>Mathématiques</strong></td>
+<td>La recherche continue — de nouvelles logiques restent à inventer</td>
+</tr>
+<tr class="even">
+<td><strong>Éducation</strong></td>
+<td>Enseigner des règles ne suffit pas ; il faut cultiver la capacité à poser de nouvelles questions</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="ce-que-nous-avons-appris" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="ce-que-nous-avons-appris"><span class="header-section-number">9.8</span> Ce que nous avons appris</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Ce qu’il faut retenir</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>L’impossibilité du manuel</strong></td>
+<td>On ne peut pas axiomatiser entièrement l’intelligence humaine</td>
+</tr>
+<tr class="even">
+<td><strong>Les limites des machines</strong></td>
+<td>Toute machine suffisamment puissante est soumise à l’incomplétude</td>
+</tr>
+<tr class="odd">
+<td><strong>Le regard extérieur</strong></td>
+<td>L’humain peut voir ce que le système ne peut pas prouver</td>
+</tr>
+<tr class="even">
+<td><strong>Les nouveaux principes</strong></td>
+<td>De nouvelles méthodes de démonstration attendent d’être inventées</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="le-mot-de-la-fin" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="le-mot-de-la-fin"><span class="header-section-number">9.9</span> Le mot de la fin</h2>
+<p>Nous voici au terme du voyage.</p>
+<p>De la crise de 1902 à la formule qui se regarde elle-même, des ondes de choc en informatique aux îles invisibles de l’océan de la connaissance — nous avons suivi le fil d’une idée vertigineuse.</p>
+<p>Gödel n’a pas détruit les mathématiques. Il ne nous a pas condamnés à l’ignorance. Il a fait quelque chose de plus subtil : il a tracé les contours de ce que nous ne pouvons pas savoir <em>depuis l’intérieur</em> — et, ce faisant, il a révélé l’existence d’un dehors.</p>
+<p>Car c’est peut-être là le message ultime. Dans un monde fasciné par les algorithmes et l’automatisation, Gödel nous rappelle qu’il y aura toujours un espace pour ce qui échappe aux règles. Un espace pour l’intuition qui précède la preuve. Pour la question qui n’a pas encore été posée. Pour le navigateur qui lève les yeux de la carte.</p>
+<p>La cathédrale des mathématiques n’est pas achevée. Elle ne le sera jamais. Et c’est précisément ce qui la rend vivante.</p>
+<p>Les vérités orphelines ne sont pas des échecs. Ce sont des invitations — à continuer de chercher, de créer, de tracer de nouvelles cartes sur l’océan sans fin de ce que nous ne savons pas encore.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./8_chapitre8.html" class="pagination-link" aria-label="Dans les entrailles de la formule">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dans les entrailles de la formule</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./10_bibliographie.html" class="pagination-link" aria-label="Bibliographie">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Bibliographie</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

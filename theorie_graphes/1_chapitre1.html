@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; Chapitre 1 : Les poignées de main de Bourbaki – La théorie des graphes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./2_chapitre2.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Aucun résultat",
+    "search-matching-documents-text": "documents correspondants",
+    "search-copy-link-title": "Copier le lien",
+    "search-hide-matches-text": "Masquer les résultats",
+    "search-more-match-text": "résultat supplémentaire",
+    "search-more-matches-text": "résultats supplémentaires",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_chapitre1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chapitre 1 : Les poignées de main de Bourbaki</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">La théorie des graphes</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Préface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1_chapitre1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chapitre 1 : Les poignées de main de Bourbaki</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2_chapitre2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapitre 2 : L’assemblée et les tiroirs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_chapitre3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapitre 3 : La loi universelle des degrés</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_bibliographie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Bibliographie</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#une-soirée-chez-les-bourbaki" id="toc-une-soirée-chez-les-bourbaki" class="nav-link active" data-scroll-target="#une-soirée-chez-les-bourbaki"><span class="header-section-number">1.1</span> Une soirée chez les Bourbaki</a></li>
+  <li><a href="#le-problème-formellement" id="toc-le-problème-formellement" class="nav-link" data-scroll-target="#le-problème-formellement"><span class="header-section-number">1.2</span> Le problème, formellement</a></li>
+  <li><a href="#le-cas-le-plus-simple" id="toc-le-cas-le-plus-simple" class="nav-link" data-scroll-target="#le-cas-le-plus-simple"><span class="header-section-number">1.3</span> Le cas le plus simple</a></li>
+  <li><a href="#le-mécanisme-de-lélimination" id="toc-le-mécanisme-de-lélimination" class="nav-link" data-scroll-target="#le-mécanisme-de-lélimination"><span class="header-section-number">1.4</span> Le mécanisme de l’élimination</a></li>
+  <li><a href="#pourquoi-cest-surprenant" id="toc-pourquoi-cest-surprenant" class="nav-link" data-scroll-target="#pourquoi-cest-surprenant"><span class="header-section-number">1.5</span> Pourquoi c’est surprenant</a></li>
+  <li><a href="#ce-que-nous-avons-appris" id="toc-ce-que-nous-avons-appris" class="nav-link" data-scroll-target="#ce-que-nous-avons-appris"><span class="header-section-number">1.6</span> Ce que nous avons appris</a></li>
+  <li><a href="#vers-lassemblée-et-les-tiroirs" id="toc-vers-lassemblée-et-les-tiroirs" class="nav-link" data-scroll-target="#vers-lassemblée-et-les-tiroirs"><span class="header-section-number">1.7</span> Vers l’assemblée et les tiroirs</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chapitre 1 : Les poignées de main de Bourbaki</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="une-soirée-chez-les-bourbaki" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="une-soirée-chez-les-bourbaki"><span class="header-section-number">1.1</span> Une soirée chez les Bourbaki</h2>
+<p>Les Bourbaki reçoivent ce soir.</p>
+<p>Monsieur et Madame Bourbaki ont invité <em>n</em> couples à dîner. Les invités arrivent, et comme le veut l’usage, on se serre la main. Chacun serre la main de certaines personnes — jamais la sienne, jamais celle de son conjoint. Les poignées de main terminées, Monsieur Bourbaki, curieux de nature, interroge chaque personne présente (sauf lui-même) : « Combien de mains avez-vous serrées ? »</p>
+<p>Il obtient 2<em>n</em> + 1 réponses — une par personne interrogée (les <em>n</em> couples invités, plus Madame Bourbaki). Et voici la surprise : <strong>toutes les réponses sont différentes</strong>.</p>
+<p>La question qui nous intéresse : combien de mains Madame Bourbaki a-t-elle serrées ? Et combien Monsieur Bourbaki lui-même ?</p>
+<p>Ce problème, popularisé par Martin Gardner <strong>[Ga]</strong> et repris par Cogis et Schwartz <strong>[CS]</strong>, est notre porte d’entrée dans la théorie des graphes. Sa solution repose sur un raisonnement par récurrence d’une élégance remarquable — et sa conclusion est aussi inattendue que satisfaisante.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Qui sont les Bourbaki ?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le nom n’est pas anodin. « Nicolas Bourbaki » est le pseudonyme collectif d’un groupe de mathématiciens français — parmi lesquels André Weil, Jean Dieudonné, Henri Cartan — qui, à partir des années 1930, entreprirent de réécrire les mathématiques de façon rigoureuse et unifiée. Leur ambition : montrer que derrière le désordre apparent des résultats mathématiques se cache une structure profonde et ordonnée.</p>
+<p>C’est exactement ce que ce petit problème de poignées de main va illustrer : une situation apparemment chaotique possède une structure cachée, nette et invariable.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="le-problème-formellement" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="le-problème-formellement"><span class="header-section-number">1.2</span> Le problème, formellement</h2>
+<p>Posons les choses précisément.</p>
+<p>Il y a 2<em>n</em> + 2 personnes à la soirée : les <em>n</em> couples invités, plus le couple Bourbaki. Chaque personne peut serrer entre 0 et 2<em>n</em> mains (toutes les personnes présentes sauf elle-même et son conjoint).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Définition : le degré d’un sommet
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En théorie des graphes, chaque personne est un <strong>sommet</strong> (un point) et chaque poignée de main est une <strong>arête</strong> (un trait qui relie deux points). Le nombre de mains serrées par une personne s’appelle son <strong>degré</strong>.</p>
+<p>Formellement : le degré d’un sommet <em>v</em>, noté <em>d(v)</em>, est le nombre d’arêtes incidentes à <em>v</em> — c’est-à-dire le nombre de connexions directes de ce sommet.</p>
+<p>C’est la notion centrale de ce chapitre. Elle relie une quantité locale (combien de voisins a un sommet) à la structure globale du graphe.</p>
+</div>
+</div>
+<p>Monsieur Bourbaki interroge 2<em>n</em> + 1 personnes. Chacune donne un nombre différent. Or les réponses possibles vont de 0 à 2<em>n</em> — c’est exactement 2<em>n</em> + 1 valeurs distinctes. Donc les réponses sont exactement : 0, 1, 2, …, 2<em>n</em>.</p>
+<p>Autrement dit, quelqu’un n’a serré aucune main, quelqu’un en a serré exactement une, et ainsi de suite jusqu’à quelqu’un qui a serré 2<em>n</em> mains — le maximum possible. Toute la gamme des degrés est couverte.</p>
+<hr>
+</section>
+<section id="le-cas-le-plus-simple" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="le-cas-le-plus-simple"><span class="header-section-number">1.3</span> Le cas le plus simple</h2>
+<p>Commençons par le cas <em>n</em> = 1. Il y a un seul couple invité — appelons-les Alice et Antoine — plus Monsieur et Madame Bourbaki. Quatre personnes en tout.</p>
+<p>Monsieur Bourbaki interroge les trois autres. Les réponses sont 0, 1, et 2 (toutes différentes, exactement les valeurs de 0 à 2<em>n</em> = 2).</p>
+<p>Qui a répondu 2 ? Cette personne a serré la main de tout le monde sauf de son conjoint. Il y a trois personnes possibles (en excluant soi-même et son conjoint) — et elle les a toutes serrées. Disons que c’est Alice.</p>
+<p>Qui a répondu 0 ? Cette personne n’a serré aucune main. Si Alice a serré la main de tout le monde (sauf Antoine), alors Antoine ne peut pas être celui qui a répondu 0 — car Alice lui a serré la main. Mais Alice a serré la main de Monsieur Bourbaki et de Madame Bourbaki. Donc la personne ayant répondu 0 ne peut être que Antoine — le conjoint de celle ayant répondu 2.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ch1_01_soiree_base.webp" class="img-fluid figure-img" width="450"></p>
+<figcaption>Le cas de base (n=1) : Alice serre 2 mains, Antoine 0 — il reste Madame Bourbaki avec 1</figcaption>
+</figure>
+</div>
+<p>Voici la clé : <strong>la personne ayant le degré maximal (2<em>n</em>) et celle ayant le degré 0 forment nécessairement un couple</strong>. Si quelqu’un a serré la main de tous (sauf son conjoint), alors son conjoint est le seul à pouvoir n’avoir serré aucune main — car tout le monde a reçu au moins une poignée de la personne au degré maximal.</p>
+<p>Récapitulons : Alice a répondu 2, Antoine a répondu 0. Il reste Madame Bourbaki qui a répondu 1.</p>
+<p>Et Monsieur Bourbaki ? Il a serré la main d’Alice (qui a serré la main de tout le monde sauf Antoine), mais pas d’Antoine (qui n’a serré aucune main). Donc Monsieur Bourbaki a aussi serré <strong>1</strong> main.</p>
+<p><strong>Résultat : pour <em>n</em> = 1, chaque membre du couple Bourbaki a serré exactement <em>n</em> = 1 main.</strong></p>
+<hr>
+</section>
+<section id="le-mécanisme-de-lélimination" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="le-mécanisme-de-lélimination"><span class="header-section-number">1.4</span> Le mécanisme de l’élimination</h2>
+<p>Le cas de base nous a révélé un principe puissant : les extrêmes s’éliminent par paires.</p>
+<p>Pour le cas général, voici comment fonctionne la récurrence. Supposons le résultat vrai pour <em>n</em> − 1 couples, et montrons-le pour <em>n</em> couples.</p>
+<p>Parmi les 2<em>n</em> + 1 réponses (0, 1, 2, …, 2<em>n</em>), considérons la personne qui a répondu 2<em>n</em> — appelons-la Max. Max a serré la main de toutes les 2<em>n</em> personnes possibles (tout le monde sauf Max et son conjoint). Qui a répondu 0 ? Par le même raisonnement que dans le cas de base, c’est nécessairement le conjoint de Max — appelons-le Min.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Analogie : le jeu des chaussettes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imaginez une boîte contenant 2<em>n</em> + 2 chaussettes, deux de chaque couleur — chaque couleur représente un couple. On tire deux chaussettes et on les apparie, <strong>à condition qu’elles ne soient pas de la même couleur</strong>. Puis on les retire de la boîte.</p>
+<p>C’est exactement le mécanisme de la preuve. À chaque étape, on identifie le couple extrême (Max et Min) et on les « retire de la boîte ». En les retirant, chaque personne restante perd une poignée de main dans son décompte — car Max avait serré la main de tout le monde. Les réponses restantes, après ajustement, deviennent : 0, 1, 2, …, 2(<em>n</em> − 1).</p>
+<p>On se retrouve exactement dans la situation de départ, mais avec <em>n</em> − 1 couples au lieu de <em>n</em>. Après <em>n</em> éliminations, il ne reste que les deux chaussettes de la couleur « Bourbaki » — le couple hôte, ayant participé à <em>n</em> associations chacun.</p>
+</div>
+</div>
+<p>Voilà toute l’astuce. À chaque étape :</p>
+<ol type="1">
+<li>On identifie le couple extrême (degré 2<em>n</em> et degré 0)</li>
+<li>On les retire — ils forment un couple invité</li>
+<li>On ajuste les degrés des personnes restantes (chacune perd 1, car Max avait serré la main de chacune)</li>
+<li>On obtient un problème identique avec <em>n</em> − 1 couples</li>
+</ol>
+<p>Après <em>n</em> éliminations, il ne reste que le couple Bourbaki. Et à chaque élimination, les degrés extrêmes étaient appariés. Par symétrie, les deux membres du couple Bourbaki se retrouvent avec le même nombre de poignées de main : <strong>exactement <em>n</em></strong>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Attention</span>Attention : une invariance remarquable
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ce résultat est bien plus fort qu’il n’y paraît. Il ne dépend d’<strong>aucune</strong> disposition particulière des invités. Peu importe qui serre la main de qui — tant que toutes les réponses sont différentes, le nombre de poignées du couple Bourbaki est <strong>forcé</strong> par le simple comptage du nombre de couples.</p>
+<p>C’est une propriété structurelle du graphe, pas un accident de la soirée. Dès que le nombre total de couples est fixé, le résultat est déterminé.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="pourquoi-cest-surprenant" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="pourquoi-cest-surprenant"><span class="header-section-number">1.5</span> Pourquoi c’est surprenant</h2>
+<p>Arrêtons-nous un instant pour mesurer ce résultat.</p>
+<p>On vous dit que 2<em>n</em> + 1 personnes donnent des réponses toutes différentes. Sans aucune autre information — sans savoir qui a serré la main de qui — vous pouvez déduire exactement le nombre de poignées de la personne non interrogée. Et pas seulement ça : vous savez que Monsieur et Madame Bourbaki ont exactement le même score.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ch1_02_graphe_poignees.webp" class="img-fluid figure-img" width="450"></p>
+<figcaption>Le graphe des poignées de main : chaque sommet est une personne, chaque arête une poignée</figcaption>
+</figure>
+</div>
+<p>Ce résultat illustre une propriété fondamentale des graphes : <strong>la séquence de degrés</strong> — la liste ordonnée du nombre de connexions de chaque sommet — contient une quantité énorme d’information sur la structure du graphe. Dans notre problème, les degrés forment la suite complète 0, 1, 2, …, 2<em>n</em>. Le couple Bourbaki occupe les deux valeurs <strong>médianes</strong> : <em>n</em> et <em>n</em>. Sous la contrainte « pas de poignée avec son partenaire », les degrés sont forcés à couvrir toute la gamme possible.</p>
+<p>En d’autres termes, le problème révèle trois propriétés profondes :</p>
+<ol type="1">
+<li><strong>La somme des degrés est toujours paire</strong> — chaque poignée de main est comptée deux fois (une par chaque participant)</li>
+<li><strong>Les degrés couvrent toute la gamme</strong> — la contrainte conjugale force une couverture complète de 0 à 2<em>n</em></li>
+<li><strong>Le degré médian est déterminé</strong> — il correspond exactement au nombre de couples invités</li>
+</ol>
+<p>Connaître la séquence de degrés, c’est déjà savoir beaucoup sur le réseau. Ce principe — les contraintes locales déterminent la structure globale — nous accompagnera tout au long de ce livre.</p>
+<hr>
+</section>
+<section id="ce-que-nous-avons-appris" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="ce-que-nous-avons-appris"><span class="header-section-number">1.6</span> Ce que nous avons appris</h2>
+<p>Résumons avant de poursuivre.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Ce qu’il faut retenir</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Le degré d’un sommet</strong></td>
+<td>Le nombre de connexions directes — la mesure la plus fondamentale en théorie des graphes</td>
+</tr>
+<tr class="even">
+<td><strong>La séquence de degrés</strong></td>
+<td>La suite ordonnée 0, 1, …, 2<em>n</em> : elle encode la structure du réseau et le couple Bourbaki occupe les valeurs médianes</td>
+</tr>
+<tr class="odd">
+<td><strong>La preuve par récurrence</strong></td>
+<td>Réduire un problème de taille <em>n</em> à un problème de taille <em>n</em> − 1, en identifiant les paires extrêmes</td>
+</tr>
+<tr class="even">
+<td><strong>L’invariance structurelle</strong></td>
+<td>Le résultat ne dépend d’aucune disposition particulière — il est forcé par les contraintes du graphe</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="vers-lassemblée-et-les-tiroirs" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="vers-lassemblée-et-les-tiroirs"><span class="header-section-number">1.7</span> Vers l’assemblée et les tiroirs</h2>
+<p>Le problème de Bourbaki nous a montré qu’un graphe — des points reliés par des traits — peut encoder une situation sociale et révéler des structures cachées. La notion de degré, si simple en apparence, s’est avérée d’une puissance remarquable. Même un problème de soirée se traduit en un graphe où les propriétés — degrés, parité, symétrie — sont très structurées.</p>
+<p>Chez les Bourbaki, toutes les réponses étaient différentes — et cette hypothèse suffisait à déterminer la structure entière du graphe. Mais est-ce seulement <em>possible</em> que tous les degrés soient différents ? Peut-on imaginer une assemblée de <em>n</em> personnes où chacun connaît un nombre différent de personnes ?</p>
+<p>La réponse, aussi surprenante que définitive, va mobiliser un principe d’une simplicité désarmante — le principe des tiroirs — et confirmer une leçon fondamentale : les degrés d’un graphe ne sont jamais aussi libres qu’on le croit.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Préface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Préface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./2_chapitre2.html" class="pagination-link" aria-label="Chapitre 2 : L'assemblée et les tiroirs">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapitre 2 : L’assemblée et les tiroirs</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
